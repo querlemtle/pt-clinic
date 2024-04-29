@@ -1,5 +1,23 @@
+import { createHashRouter, RouterProvider } from "react-router-dom";
+
+const router = createHashRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <ErrorPage />
+  }
+]);
+
 function App() {
-	return <div className="text-3xl font-bold underline">源衡物理治療所</div>;
+  return (
+    <>
+      <div />
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+      <div />
+    </>
+  );
 }
 
 export default App;
