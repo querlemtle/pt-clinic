@@ -30,6 +30,22 @@ export default {
         800: "#3a3a85",
         900: "#2d296e"
       }
+    },
+    fontFamily: {
+      sans: [
+        "Noto Sans TC",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Open Sans",
+        "Helvetica Neue",
+        "sans-serif"
+      ]
     }
   },
   plugins: []
