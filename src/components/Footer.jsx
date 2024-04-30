@@ -6,7 +6,7 @@ import lineIcon from "./../assets/line-icon.svg";
 
 export default function Footer() {
   return (
-    <footer className="grid grid-cols-3 bg-primary-50 px-10 py-5 text-primary-900">
+    <footer className="col-span-2 grid grid-cols-3 bg-primary-50 px-10 py-5 text-primary-900">
       <dl>
         <div className="mb-2 flex items-center">
           <img src={logo} alt="logo" className="mr-2" />

@@ -14,13 +14,13 @@ const router = createHashRouter([
 
 function App() {
   return (
-    <>
+    <div className="grid-cols-desktop grid">
       <Header />
       <div className="App font-sans">
         <RouterProvider router={router} />
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

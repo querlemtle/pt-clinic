@@ -3,7 +3,7 @@ import phoneIcon from "./../assets/phone-icon.svg";
 
 export default function Header() {
   return (
-    <header className="h-screen w-48 bg-primary-50 text-center text-primary-900">
+    <header className="w-48 bg-primary-50 text-center text-primary-900">
       <div>
         <a
           href="#"

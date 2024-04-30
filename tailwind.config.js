@@ -46,6 +46,15 @@ export default {
         "Helvetica Neue",
         "sans-serif"
       ]
+    },
+    extend: {
+      gridTemplateColumns: {
+        // Layout for desktop (> 1280px)
+        desktop: "12rem 1fr"
+      },
+      dropShadow: {
+        "sec-900": "0 4px 2px rgba(45, 41, 110, 0.5)"
+      }
     }
   },
   plugins: []
