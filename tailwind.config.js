@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import plugin from "tailwindcss/plugin";
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -54,8 +56,33 @@ export default {
       },
       dropShadow: {
         "sec-900": "0 4px 2px rgba(45, 41, 110, 0.5)"
+      },
+      backgroundImage: {
+        "wave-deco": "url('./src/assets/bg-decoration-1.svg')"
+      },
+      boxShadow: {
+        "cta-default":
+          "inset 0 8px 8px rgba(110, 182, 140, 1), inset 0 -8px 8px rgba(17, 74, 43, 1)",
+        "cta-pressed":
+          "inset 0 4px 8px rgba(0, 0, 0, 1), inset 0 -8px 8px rgba(17, 74, 43, 1)"
+      },
+      // https://www.hyperui.dev/blog/text-shadow-with-tailwindcss
+      textShadow: {
+        none: "none",
+        md: "0 4px 4px rgba(45, 41, 110, 0.25)"
       }
     }
   },
-  plugins: []
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value
+          })
+        },
+        { values: theme("textShadow") }
+      );
+    })
+  ]
 };
