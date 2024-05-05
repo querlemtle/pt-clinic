@@ -58,7 +58,8 @@ export default {
         "sec-900": "0 4px 2px rgba(45, 41, 110, 0.5)"
       },
       backgroundImage: {
-        "wave-deco": "url('./src/assets/bg-decoration-1.svg')"
+        "wave-deco": "url('./src/assets/bg-decoration-1.svg')",
+        "chevron-r": "url('./src/assets/right-chevron.svg')"
       },
       boxShadow: {
         "cta-default":
