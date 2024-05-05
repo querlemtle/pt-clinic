@@ -26,11 +26,11 @@ export default function Home() {
         <div className="col-start-2 col-end-5 flex flex-col items-start gap-y-8">
           <h3 className="text-2xl font-bold text-secondary-700">關於我們</h3>
           <p className="text-primary-900">
-            源衡物理治療所是由多個經驗豐富的物理治療師成立，從疾病傷害預防、慢性疼痛、術後復健，我們致力於與患者合作，一同找出疼痛根源；透過個人化的治療方案，希望讓您重獲健康與活力！
+            源衡物理治療所是由多位經驗豐富的物理治療師成立，從疾病傷害預防、慢性疼痛、術後復健，我們致力於與患者合作，一同找出疼痛根源；透過個人化的治療方案，希望讓您重獲健康與活力！
           </p>
           <a
             href="#"
-            className="rounded-2xl border-2 border-primary-900 px-6 py-3 text-primary-900 hover:bg-primary-900 hover:text-white"
+            className="rounded-2xl border-2 border-primary-900 px-6 py-3 text-primary-900 transition-all duration-300 ease-out hover:bg-primary-900 hover:text-white"
           >
             瞭解更多 &#8594;
           </a>
@@ -76,9 +76,9 @@ export default function Home() {
         </div>
         <a
           href="#"
-          className="shadow-cta-default hover:shadow-cta-pressed group rounded-2xl bg-primary-700 px-4 py-2 font-bold text-white"
+          className="group rounded-2xl bg-primary-700 px-4 py-2 font-bold text-white shadow-cta-default transition-all duration-300 ease-out hover:shadow-cta-pressed"
         >
-          <span className="text-shadow-md group-hover:text-shadow-none active:text-shadow-none opacity-90 active:opacity-100 group-hover:opacity-100">
+          <span className="opacity-90 text-shadow-md active:opacity-100 active:text-shadow-none group-hover:opacity-100 group-hover:text-shadow-none">
             不確定您的問題是否在治療範圍內？參考我們的互動圖表了解更多！
           </span>
         </a>
@@ -86,12 +86,17 @@ export default function Home() {
       <section className="flex flex-col items-center gap-y-8">
         <h3 className="text-2xl font-bold text-secondary-700">就診流程</h3>
         <div className="grid grid-cols-3 justify-items-center">
-          <div className="text-primary-900">
-            至醫療院所申請醫師開立的診斷證明、照會或醫囑
+          <div className="before:border-transparent border-2 border-primary-900 text-primary-900">
+            <span>1</span>
+            <p>至醫療院所申請醫師開立的診斷證明、照會或醫囑</p>
           </div>
-          <div className="text-primary-800">透過電話或線上預約看診</div>
+          <div className="text-primary-800">
+            <span>2</span>
+            <p>透過電話或線上預約看診</p>
+          </div>
           <div className="text-primary-700">
-            請穿著輕便服裝，並在預約時間前五分鐘抵達
+            <span>3</span>
+            <p>請穿著輕便服裝，並在預約時間前五分鐘抵達</p>
           </div>
         </div>
       </section>
