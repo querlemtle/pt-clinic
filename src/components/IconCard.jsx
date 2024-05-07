@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 
 export default function IconCard({zhName, enName, brief}) {
   return (
-    <div className="flex max-w-44 flex-col items-center rounded-2xl bg-white py-4">
+    <div>
       <img src={rehabIcon} alt={zhName} />
-      <h4 className="text-xl font-semibold text-primary-900">{zhName}</h4>
-      <h5 className="mb-2 font-semibold text-primary-900">
+      <h4>{zhName}</h4>
+      <h5>
         {enName}
       </h5>
-      <p className="px-5 text-primary-900">
+      <p>
         {brief}
       </p>
     </div>
