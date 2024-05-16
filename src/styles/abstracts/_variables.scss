@@ -1,0 +1,62 @@
+// -----------------------------------------------------------------------------
+// 包含整個網站都會用到的變數
+// -----------------------------------------------------------------------------
+
+// Colors
+$white: #ffffff;
+$black: #000000;
+
+$color-primary-50: #e5f2ea;
+$color-primary-100: #bfdecc;
+$color-primary-200: #97c9ab;
+$color-primary-300: #6eb68c;
+$color-primary-400: #50a776;
+$color-primary-500: #30985f;
+$color-primary-600: #298a56;
+$color-primary-700: #23794a;
+$color-primary-800: #1e683f;
+$color-primary-900: #114a2b;
+
+$color-secondary-50: #e9ebf4;
+$color-secondary-100: #c8cbe5;
+$color-secondary-200: #a4aad3;
+$color-secondary-300: #8289c1;
+$color-secondary-400: #686fb4;
+$color-secondary-500: #5056a7;
+$color-secondary-600: #4a4e9d;
+$color-secondary-700: #414491;
+$color-secondary-800: #3a3a85;
+$color-secondary-900: #2d296e;
+
+// Fonts
+$font-sans: "Noto Sans TC", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+  "Cantarell", "Open Sans", "Helvetica Neue", "sans-serif";
+
+$font-size-3xl: 48px;
+$font-size-2xl: 32px;
+$font-size-xl: 24px;
+$font-size-l: 20px;
+$font-size-base: 16px;
+$font-size-small: 14px;
+
+// Spacing
+@function spacing($multiplier) {
+  // Calculate the spacing based on the multiplier
+  @return 8px * $multiplier;
+}
+
+// Border radius
+$border-radius-s: 8px;
+$border-radius-base: 16px;
+
+// Shadows
+$skeuo-default: inset 0 8px 8px $color-primary-300, inset 0 -8px 8px $color-primary-900;
+$skeuo-pressed: inset 0 4px 8px $black, inset 0 -8px 8px $color-primary-900;
+$box-shadow-secondary-900: 0 4px 2px rgba(45, 41, 110, 0.5);
+$text-shadow-secondary-900: 0 4px 4px rgba(45, 41, 110, 0.25);
+
+// Media queries
+$breakpoints-desktop: 1440px;
+$breakpoints-laptop: 1024px;
+$breakpoints-tablet: 834px;
+$breakpoints-mobile: 390px;
