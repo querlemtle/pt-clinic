@@ -1,7 +1,4 @@
-$grid-desktop: 12rem 1fr;
-
-@for $i from 2 through 12 {
-  grid-cols-#{$i} {
-    grid-template-columns: repeat($i, 1fr);
-  }
+.layout {
+  display: grid;
+  grid-template-columns: 15% 1fr;
 }

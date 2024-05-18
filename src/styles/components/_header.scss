@@ -1,0 +1,57 @@
+@use "./../abstracts" as *;
+
+.header {
+  padding: spacing(1) spacing(2);
+  background: $gradient-primary-light;
+  height: 100%;
+  position: relative;
+}
+
+.header__list {
+  position: sticky;
+  // According to MDN: You must specify a threshold with at least one of top, right, bottom, or left for sticky positioning to behave as expected. Otherwise, it will be indistinguishable from relative positioning.
+  top: spacing(1);
+}
+
+.brand {
+  display: grid;
+  row-gap: spacing(1);
+  justify-items: center;
+  margin-bottom: spacing(6);
+}
+
+.brand__title {
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: spacing(0.5);
+}
+
+.menu {
+  display: grid;
+  row-gap: spacing(2);
+  justify-items: center;
+  letter-spacing: spacing(0.2);
+  margin-bottom: spacing(6);
+}
+
+.menu__item {
+  opacity: 1;
+  border-bottom: 2px solid transparent;
+}
+
+.menu__item:hover {
+  opacity: 0.7;
+  border-bottom: 2px solid $color-primary-700;
+}
+
+.header__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 350ms ease;
+}
+
+.header__btn:hover,
+.header__btn:focus {
+  opacity: 0.7;
+}

@@ -2,18 +2,46 @@
 // 網站的按鈕樣式
 // -----------------------------------------------------------------------------
 
-@use "./../abstracts/variables" as *;
+@use "./../abstracts" as *;
 
 %btn {
-  border: 1px solid $color-primary-900;
+  border: 2px solid $color-primary-900;
   padding: 1rem 2rem;
   background-color: $white;
   color: $color-primary-900;
+  border-radius: $border-radius-base;
+  transition: all 350ms ease;
+  &:hover {
+    border: 2px solid transparent;
+    padding: 1rem 2rem;
+    background-color: $color-primary-900;
+    color: $white;
+  }
 }
 
-%btn:hover {
-  border: none;
-  padding: 1rem 2rem;
-  background-color: transparent;
-  color: $color-primary-900;
+%cta {
+  padding: spacing(1) spacing(2);
+  background-color: $color-primary-700;
+  box-shadow: $skeuo-default, $box-shadow-secondary-900;
+  color: mix($white, rgba(255, 255, 255, 0.7));
+  font-weight: 500;
+  letter-spacing: spacing(0.25);
+  text-shadow: $text-shadow-secondary-900;
+  border-radius: $border-radius-base;
+}
+
+.btn {
+  @extend %btn;
+}
+
+.cta {
+  @extend %cta;
+  transition: all 500ms ease;
+  &:hover,
+  &:active {
+    box-shadow: $skeuo-pressed;
+    text-shadow: none;
+    color: $white;
+    transform: scale(0.99);
+  }
 }

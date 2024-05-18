@@ -28,6 +28,9 @@ $color-secondary-700: #414491;
 $color-secondary-800: #3a3a85;
 $color-secondary-900: #2d296e;
 
+// Gradients
+$gradient-primary-light: linear-gradient(180deg, $white 50%, $color-primary-50 100%);
+
 // Fonts
 $font-sans: "Noto Sans TC", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
   "Cantarell", "Open Sans", "Helvetica Neue", "sans-serif";
@@ -39,20 +42,14 @@ $font-size-l: 20px;
 $font-size-base: 16px;
 $font-size-small: 14px;
 
-// Spacing
-@function spacing($multiplier) {
-  // Calculate the spacing based on the multiplier
-  @return 8px * $multiplier;
-}
-
 // Border radius
 $border-radius-s: 8px;
 $border-radius-base: 16px;
 
 // Shadows
 $skeuo-default: inset 0 8px 8px $color-primary-300, inset 0 -8px 8px $color-primary-900;
-$skeuo-pressed: inset 0 4px 8px $black, inset 0 -8px 8px $color-primary-900;
-$box-shadow-secondary-900: 0 4px 2px rgba(45, 41, 110, 0.5);
+$skeuo-pressed: inset 0 4px 8px $black, inset 0 -8px 8px $color-primary-400;
+$box-shadow-secondary-900: 0 4px 4px rgba(45, 41, 110, 0.25);
 $text-shadow-secondary-900: 0 4px 4px rgba(45, 41, 110, 0.25);
 
 // Media queries

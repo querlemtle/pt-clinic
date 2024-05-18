@@ -1,4 +1,9 @@
-import { createHashRouter, RouterProvider, Outlet } from "react-router-dom";
+import {
+  createHashRouter,
+  RouterProvider,
+  Outlet,
+  ScrollRestoration
+} from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -23,21 +28,18 @@ const router = createHashRouter([
 function AppLayout() {
   return (
     <>
-      <div className="grid grid-cols-desktop">
+      <div className="layout">
         <Header />
         <Outlet />
-        <Footer />
       </div>
+      <ScrollRestoration />
+      <Footer />
     </>
   );
 }
 
 function App() {
-  return (
-    <div className="App font-sans">
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

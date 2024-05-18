@@ -1,0 +1,82 @@
+@use "./../abstracts" as *;
+@use "./../components" as *;
+@use "./../layout" as *;
+
+.main {
+  max-width: 1440px;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100vh;
+  align-items: center;
+  margin-top: spacing(2);
+}
+
+.kv__wrapper {
+  grid-area: 1 / 1 / 2 / 7;
+}
+
+.kv__slogan {
+  grid-area: 1 / 6 / 2 / -1;
+  display: grid;
+}
+
+.kv__title {
+  color: $color-primary-600;
+  text-shadow: $text-shadow-secondary-900;
+  mix-blend-mode: multiply;
+  margin-bottom: spacing(7.5);
+}
+
+.kv__accent {
+  color: $color-secondary-600;
+}
+
+.kv__subtitle {
+  mix-blend-mode: luminosity;
+  justify-self: center;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: spacing(4);
+  margin-bottom: spacing(10);
+  margin-right: spacing(4);
+}
+
+.about__context {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  row-gap: spacing(9);
+  align-items: center;
+  background: url("@/assets/bg-decoration-1.svg") no-repeat;
+  background-size: cover;
+  padding: spacing(10);
+}
+
+.service__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.card {
+  @extend %card;
+  row-gap: spacing(2);
+  width: 40%;
+  max-width: 250px;
+  background-color: $white;
+  padding: spacing(3);
+}
+

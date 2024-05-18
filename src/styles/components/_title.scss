@@ -1,0 +1,10 @@
+@use "./../abstracts" as *;
+
+%title {
+  color: $color-secondary-700;
+  font-weight: 500;
+}
+
+.title {
+  @extend %title;
+}

@@ -3,15 +3,13 @@ import PropTypes from "prop-types";
 
 export default function IconCard({zhName, enName, brief}) {
   return (
-    <div>
+    <div className="card">
       <img src={rehabIcon} alt={zhName} />
-      <h4>{zhName}</h4>
-      <h5>
-        {enName}
-      </h5>
-      <p>
-        {brief}
-      </p>
+      <div>
+        <h3>{zhName}</h3>
+        <h4>{enName}</h4>
+      </div>
+      <p>{brief}</p>
     </div>
   );
 }
