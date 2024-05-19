@@ -1,0 +1,9 @@
+// 參考 Sass 官方推薦的 7-1 檔案架構： https://sass-guidelin.es/#the-7-1-pattern
+
+@use "abstracts" as *;
+@use "base" as *;
+@use "components" as *;
+@use "layout" as *;
+@use "pages" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..700&display=swap');
