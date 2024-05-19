@@ -1,7 +1,12 @@
-import bannerImg from "./../assets/flower-on-back.jpg";
-import aboutImg from "./../assets/med-team.jpg";
-import IconCard from "../components/IconCard";
-import services from "../data/services";
+import bannerImg from "@/assets/flower-on-back.jpg";
+import aboutImg from "@/assets/med-team.jpg";
+import IconCard from "@/components/IconCard";
+import StepCard from "@/components/StepCard";
+import NewsCard from "@/components/NewsCard";
+import formatDate from "@/utils/formatDate";
+import services from "@/data/services";
+import steps from "@/data/steps";
+import news from "@/data/news";
 
 export default function Home() {
   return (
@@ -23,6 +28,7 @@ export default function Home() {
           </h3>
         </div>
       </section>
+      {/* About */}
       <section className="about">
         <div className="about__context">
           <h2 className="title">關於我們</h2>
@@ -35,6 +41,7 @@ export default function Home() {
         </div>
         <img src={aboutImg} alt="團隊合照" />
       </section>
+      {/* Service */}
       <section className="service">
         <h2 className="title">服務項目</h2>
         {/* Card groups */}
@@ -56,24 +63,42 @@ export default function Home() {
           </span>
         </a>
       </section>
-      <section>
+      {/* Steps */}
+      <section className="steps">
         <h2 className="title">就診流程</h2>
-        <div>
-          <div>
-            <span>1</span>
-            <p>至醫療院所申請醫師開立的診斷證明、照會或醫囑</p>
+        <div className="steps__grid">
+          {steps.map((step) => {
+            return (
+              <StepCard key={step.num} num={step.num} content={step.content} />
+            );
+          })}
+        </div>
+      </section>
+      {/* News & Info */}
+      <section className="topics">
+        <div className="news">
+          <h2 className="title">最新消息</h2>
+          <div className="news__grid">
+            {news.map((item) => {
+              return (
+                <NewsCard
+                  key={item.date}
+                  date={formatDate(item.date)}
+                  title={item.title}
+                />
+              );
+            })}
           </div>
-          <div>
-            <span>2</span>
-            <p>透過電話或線上預約看診</p>
-          </div>
-          <div>
-            <span>3</span>
-            <p>請穿著輕便服裝，並在預約時間前五分鐘抵達</p>
+        </div>
+        <div className="info">
+          <h2 className="title">衛教專區</h2>
+          <div className="info__grid">
+            <p>Lorem ipsum dolor sit.</p>
+            <p>Lorem ipsum dolor sit.</p>
+            <p>Lorem ipsum dolor sit.</p>
           </div>
         </div>
       </section>
-      <section></section>
     </main>
   );
 }
