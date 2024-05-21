@@ -7,6 +7,7 @@ import formatDate from "@/utils/formatDate";
 import services from "@/data/services";
 import steps from "@/data/steps";
 import news from "@/data/news";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -35,9 +36,9 @@ export default function Home() {
           <p>
             源衡物理治療所是由多位經驗豐富的物理治療師成立，從疾病傷害預防、慢性疼痛、術後復健，我們致力於與患者合作，一同找出疼痛根源；透過個人化的治療方案，希望讓您重獲健康與活力！
           </p>
-          <a href="#" className="btn">
+          <Link to="/about" className="btn">
             瞭解更多 &#8594;
-          </a>
+          </Link>
         </div>
         <img src={aboutImg} alt="團隊合照" />
       </section>

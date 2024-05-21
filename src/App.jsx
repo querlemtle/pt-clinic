@@ -1,45 +1,26 @@
-import {
-  createHashRouter,
-  RouterProvider,
-  Outlet,
-  ScrollRestoration
-} from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
-
-const router = createHashRouter([
-  {
-    path: "/",
-    element: <AppLayout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <Home />
-      }
-    ]
-  }
-]);
-
-// Header and footer need to be rendered within `RouterProvider`, so <Link> can find router context
-// Reference: https://stackoverflow.com/a/77977937
-function AppLayout() {
-  return (
-    <>
-      <div className="layout">
-        <Header />
-        <Outlet />
-      </div>
-      <ScrollRestoration />
-      <Footer />
-    </>
-  );
-}
+import { ScrollToTop } from "./utils/ScrollToPosition";
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <HashRouter>
+      <ScrollToTop />
+      <div className="layout">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About /> } />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </div>
+      <Footer />
+    </HashRouter>
+  );
 }
 
 export default App;

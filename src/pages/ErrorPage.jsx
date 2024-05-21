@@ -1,14 +1,14 @@
-import { useRouteError } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function ErrorPage() {
-  const error = useRouteError();
-
-  return (
-    <div>
-      <h1>
-        頁面出錯了...
-      </h1>
-      <p>錯誤代碼：{error.status}</p>
-    </div>
-  );
+   return (
+     <main className="main">
+       <div className="error__grid">
+         <h1 className="title">頁面出錯了...</h1>
+         <Link to="/" className="card__link">
+           回首頁
+         </Link>
+       </div>
+     </main>
+   );
 }
