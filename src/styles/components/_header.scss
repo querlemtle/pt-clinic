@@ -54,3 +54,34 @@
 .header__btn:focus {
   opacity: 0.7;
 }
+
+@media (max-width: 1024px) {
+  .header,
+  .header__list,
+  .header__nav,
+  .brand {
+    display: flex;
+  }
+
+  .header {
+    height: 80px;
+  }
+
+  .header__list {
+    width: 100%;
+  }
+
+  .brand {
+    align-items: center;
+  }
+
+  .header__nav {
+    justify-content: space-between;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}

@@ -3,9 +3,9 @@
 function formatDate(dateStr) {
   const d = new Date(dateStr);
   const formattedDate = new Intl.DateTimeFormat("zh-Hans-TW", {
-    dateStyle: "medium",
-    timeStyle: "short",
-    timeZone: "Asia/Taipei"
+    year: "numeric",
+    month: "numeric",
+    day: "numeric"
   }).format(d);
   return formattedDate;
 }

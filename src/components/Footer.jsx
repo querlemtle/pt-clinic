@@ -1,8 +1,4 @@
-import logo from "./../assets/logo.svg";
-import mapIcon from "./../assets/map-icon.svg";
-import igIcon from "./../assets/ig-icon.svg";
-import fbIcon from "./../assets/fb-icon.svg";
-import lineIcon from "./../assets/line-icon.svg";
+import { logo, mapIcon, igIcon, fbIcon, lineIcon } from "@/assets/images";
 
 export default function Footer() {
   return (

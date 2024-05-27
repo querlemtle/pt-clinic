@@ -1,0 +1,26 @@
+@use "./../abstracts" as *;
+@use "./../components" as *;
+@use "./../layout" as *;
+
+.grid--origin,
+.grid--feature {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: spacing(4);
+}
+
+.grid--ideal {
+  display: grid;
+  place-items: center;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: $border-radius-rounded;
+  background-color: $color-primary-900;
+  color: $white;
+  box-shadow: $skeuo-default;
+  display: grid;
+  place-items: center;
+}

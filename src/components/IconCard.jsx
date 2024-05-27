@@ -1,4 +1,4 @@
-import rehabIcon from "./../assets/rehab-icon.svg";
+import { rehabIcon } from "../assets/images";
 import PropTypes from "prop-types";
 
 export default function IconCard({zhName, enName, brief}) {

@@ -1,5 +1,4 @@
-import bannerImg from "@/assets/flower-on-back.jpg";
-import aboutImg from "@/assets/med-team.jpg";
+import { flowerOnBack as bannerImg, medTeam as aboutImg } from "@/assets/images";
 import IconCard from "@/components/IconCard";
 import StepCard from "@/components/StepCard";
 import NewsCard from "@/components/NewsCard";

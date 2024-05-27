@@ -1,5 +1,5 @@
-import logo from "./../assets/logo.svg";
-import telIcon from "./../assets/tel-icon.svg";
+import { logo, telIcon } from "@/assets/images";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -11,13 +11,13 @@ export default function Header() {
             <p className="brand__title">源衡物理治療所</p>
           </a>
         </div>
-        <nav>
+        <nav className="header__nav">
           <ul className="menu">
             <li className="menu__item">
-              <a href="#">關於我們</a>
+              <Link to="/about">關於我們</Link>
             </li>
             <li className="menu__item">
-              <a href="#">團隊成員</a>
+              <Link to="/team">團隊成員</Link>
             </li>
             <li className="menu__item">
               <a href="#">服務項目</a>
