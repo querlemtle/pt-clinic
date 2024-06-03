@@ -1,9 +1,34 @@
-import { teamwork, treatmentRoom } from "@/assets/images";
+import { teamwork } from "@/assets/images";
+import { useState } from "react";
+
+const ideals = [
+  {
+    title: "合作",
+    explan: "治療師與患者之間以平等、信任的關係相互討論，一同找出問題解方"
+  },
+  {
+    title: "全面",
+    explan: "透過一對一的專業評估與治療，不只對症下藥，而是全方位地分析疾病源頭"
+  },
+  {
+    title: "精進",
+    explan: "診所適時引進新儀器或吸收國內外新技術，提供患者更佳、更多元的選擇"
+  }
+];
 
 export default function About() {
+  const [idealDisplay, setIdealDisplay] = useState(ideals[0]);
+  const changeDisplay = (event) => {
+    const newIdealIndex = ideals.findIndex(
+      (ideal) => ideal.title === event.target.textContent
+    );
+    setIdealDisplay(ideals[newIdealIndex]);
+  };
+
   return (
     <main className="main">
-      <section className="grid--origin">
+      <h2 className="title title--center">關於我們</h2>
+      <section className="origin">
         <div>
           <h2 className="title">緣起</h2>
           <p>
@@ -14,19 +39,28 @@ export default function About() {
           <img src={teamwork} alt="團隊合作" />
         </div>
       </section>
-      <section className="grid--ideal">
+      <section className="ideal">
         <h2 className="title">核心理念</h2>
-        <div className="circle">合作</div>
-        <div className="circle">全面</div>
-        <div className="circle">精進</div>
-      </section>
-      <section className="grid--feature">
-        <div>
-          <img src={treatmentRoom} alt="治療所環境" />
+        <div className="ideal__grid">
+          <div className="circle circle--um" onPointerDown={changeDisplay}>
+            合作
+          </div>
+          <div className="circle circle--bl" onPointerDown={changeDisplay}>
+            全面
+          </div>
+          <div className="circle circle--br" onPointerDown={changeDisplay}>
+            精進
+          </div>
+          <div className="ideal__explan">
+            <h3>{idealDisplay.title}</h3>
+            <p>{idealDisplay.explan}</p>
+          </div>
         </div>
-        <div>
-          <h2 className="title">本所特色</h2>
-          <p>
+      </section>
+      <section className="feature">
+        <div className="feature__grid">
+          <h2 className="title title--feature">本所特色</h2>
+          <p className="feature__content">
             環境上，治療所內部均為獨立私人診間，您可以在明亮、整潔、舒適的環境下安心與治療師進行一對一診療。診所配備先進紅外線治療儀、體外震波等儀器輔助治療，促進傷口癒合與減緩疼痛。我們的治療師們皆受過專業訓練與取得相關證照認可，秉持著以人為本的精神傾聽、與個案討論治療目標；另外，對於行動不便出門的患者，我們亦提供到府診察的服務，讓有需求者都能獲得適切的照護。
           </p>
         </div>
