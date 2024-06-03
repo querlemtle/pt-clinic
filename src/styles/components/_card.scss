@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// 網站的卡片元件樣式
+// -----------------------------------------------------------------------------
+
 @use "./../abstracts" as *;
 
 %card {
@@ -12,6 +16,7 @@
   @extend %card;
 }
 
+// -----------------------------------------
 // IconCard
 .card--service {
   row-gap: spacing(2);
@@ -20,13 +25,60 @@
   background-color: $white;
   padding: spacing(3);
   box-shadow: $box-shadow-secondary-900;
+  transition: all 500ms ease;
+  &:hover {
+    box-shadow: none;
+  }
 }
 
+.card__icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 0;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card__icon--neuro {
+  background-image: url("@/assets/neuro-before.svg");
+}
+
+.card:hover .card__icon--neuro {
+  background-image: url("@/assets/neuro-after.svg");
+}
+
+.card__icon--pain {
+  background-image: url("@/assets/chronic-pain-before.svg");
+}
+
+.card:hover .card__icon--pain {
+  background-image: url("@/assets/chronic-pain-after.svg");
+}
+
+.card__icon--sport {
+  background-image: url("@/assets/sport-injury-before.svg");
+}
+
+.card:hover .card__icon--sport {
+  background-image: url("@/assets/sport-injury-after.svg");
+}
+
+.card__icon--pregnancy {
+  background-image: url("@/assets/pregnancy-before.svg");
+}
+
+.card:hover .card__icon--pregnancy {
+  background-image: url("@/assets/pregnancy-after.svg");
+}
+
+// -----------------------------------------
 // StepCard
 .card--step {
   width: 100%;
-  padding: spacing(3);
   position: relative;
+  display: grid;
+  place-items: center;
 }
 
 .card--step:nth-child(1) {
@@ -51,7 +103,9 @@
   border-radius: $border-radius-base;
   padding: spacing(1);
   background: linear-gradient(180deg, $color-secondary-600, $color-primary-500);
-  mask: linear-gradient($white 0 0) content-box, linear-gradient($white 0 0);
+  mask:
+    linear-gradient($white 0 0) content-box,
+    linear-gradient($white 0 0);
   mask-composite: exclude;
 }
 
@@ -69,9 +123,10 @@
 .card__content {
   font-weight: 500;
   text-align: center;
-  margin: 0 auto;
+  margin: spacing(4);
 }
 
+// -----------------------------------------
 // NewsCard
 .card--news {
   align-items: flex-start;
@@ -92,23 +147,56 @@
   }
 }
 
+// -----------------------------------------
 // StaffCard
 .card--staff {
-  display: grid;
-  grid-template-columns: 30% 1fr;
-  column-gap: spacing(4);
+  flex-direction: row;
+  align-items: flex-start;
+  column-gap: 5%;
+}
+
+.card__img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.card__pfp--right {
+  order: 1;
 }
 
 .card__title {
   font-weight: 500;
   color: $color-primary-800;
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  column-gap: spacing(1);
+  margin-bottom: spacing(4);
+}
+
+.card__name {
+  color: $color-primary-500;
+  margin-bottom: 0;
+  text-shadow: none;
+}
+
+.card__body {
+  padding: spacing(1);
+  backdrop-filter: blur(2px);
 }
 
 .card__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: spacing(4) spacing(8);
   text-align: left;
-  list-style: circle;
+  font-size: $font-size-l;
+  font-weight: 500;
+}
+
+.card__sublist {
+  margin-top: spacing(2);
+  font-size: $font-size-base;
+  font-weight: 400;
+  line-height: 2;
 }

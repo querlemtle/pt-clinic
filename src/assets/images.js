@@ -9,7 +9,6 @@ import lineIcon from "./line-icon.svg";
 import igIcon from "./ig-icon.svg";
 import telIcon from "./tel-icon.svg";
 import mapIcon from "./map-icon.svg";
-import rehabIcon from "./rehab-icon.svg";
 
 // photos
 import medTeam from "./med-team.jpg";
@@ -44,7 +43,6 @@ export {
   igIcon,
   telIcon,
   mapIcon,
-  rehabIcon,
   medTeam,
   teamwork,
   ptF1,
