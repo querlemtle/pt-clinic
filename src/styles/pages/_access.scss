@@ -1,0 +1,9 @@
+
+@use "./../abstracts" as *;
+
+.leaflet-container {
+  width: 50%;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: $border-radius-base;
+}

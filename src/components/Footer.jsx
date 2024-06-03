@@ -1,11 +1,12 @@
 import { logo, mapIcon, igIcon, fbIcon, lineIcon } from "@/assets/images";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <dl>
-        <div className="row footer__brand">
-          <img src={logo} alt="logo" />
+        <div className="row brand">
+          <img src={logo} alt="logo" className="brand__logo" />
           <p className="brand__title">源衡物理治療所</p>
         </div>
         <div className="row">
@@ -16,9 +17,9 @@ export default function Footer() {
           <dt>地址：</dt>
           <dd className="row">
             台北市北投區光明路六段80號
-            <a href="#">
+            <Link to="/access">
               <img src={mapIcon} alt="map-icon" className="list__icon" />
-            </a>
+            </Link>
           </dd>
         </div>
       </dl>
