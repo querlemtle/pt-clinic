@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function IconCard({zhName, enName, brief, iconName}) {
+export default function IconCard({ zhName, enName, brief, iconName }) {
   return (
     <div className="card card--service">
       <div className={`card__icon card__icon--${iconName}`}></div>
@@ -17,5 +17,5 @@ IconCard.propTypes = {
   zhName: PropTypes.string.isRequired,
   enName: PropTypes.string.isRequired,
   brief: PropTypes.string.isRequired,
-  iconName: PropTypes.string.isRequired,
+  iconName: PropTypes.string.isRequired
 };

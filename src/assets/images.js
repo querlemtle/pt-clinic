@@ -1,9 +1,9 @@
-// backgrounds
-import bgDeco1 from "./bg-decoration-1.svg";
-import bgDeco2 from "./bg-decoration-2.svg";
+// backgrounds & decorations
+import decoFluid from "./deco-fluid.svg";
 
 // logo & icons
 import logo from "./logo.svg";
+import logoBorder from "./logo-border.svg";
 import fbIcon from "./fb-icon.svg";
 import lineIcon from "./line-icon.svg";
 import igIcon from "./ig-icon.svg";
@@ -28,16 +28,14 @@ import plankExercise from "./plank-exercise.jpg";
 import ballExercise from "./ball-exercise.png";
 // https://pixabay.com/photos/treatment-room-clinic-doctor-548143/
 import treatmentRoom from "./treatment-room.jpg";
-// https://pixabay.com/photos/therapy-center-physical-therapy-5112724/
-import pediatrics from "./pediatrics.jpg";
 import flowerOnBack from "./flower-on-back.jpg";
 // Photo by Yan Krukau from Pexels: https://www.pexels.com/photo/women-in-cabinet-5793684/
 import postureCorrection from "./posture-correction.jpg";
 
 export {
-  bgDeco1,
-  bgDeco2,
+  decoFluid,
   logo,
+  logoBorder,
   fbIcon,
   lineIcon,
   igIcon,
@@ -55,7 +53,6 @@ export {
   plankExercise,
   ballExercise,
   treatmentRoom,
-  pediatrics,
   flowerOnBack,
   postureCorrection,
 };

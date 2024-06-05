@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 export default function NewsCard({ date, title }) {
   return (
     <div className="card card--news">
-      <span className="card__meta">{date}</span>
       <a href="#" className="card__link">
-        {title}
+        <span className="card__meta">{date}</span>
+        <p className="card__title card__title--news">{title}</p>
       </a>
     </div>
   );

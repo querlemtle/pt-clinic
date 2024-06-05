@@ -1,5 +1,14 @@
+// -----------------------------------------------------------------------------
+// 包含整個網站都會用到的 @extend, @mixin, @function
+// -----------------------------------------------------------------------------
 // Spacing
 @function spacing($multiplier) {
   // Calculate the spacing based on the multiplier
   @return 8px * $multiplier;
 }
+
+%container {
+  width: 90%;
+  margin: 0 auto;
+}
+

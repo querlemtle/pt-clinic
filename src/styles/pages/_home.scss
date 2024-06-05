@@ -2,107 +2,205 @@
 @use "./../components" as *;
 @use "./../layout" as *;
 
+// Key visual
 .kv {
+  width: 100%;
+  background-image: linear-gradient(180deg, rgba($color-primary-100, 0.5) 10%, rgba($color-primary-100, 0) 100%);
+  position: relative;
+}
+
+.kv__grid {
+  @extend %container;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 100vh;
   align-items: center;
-  margin-top: spacing(2);
 }
 
 .kv__wrapper {
   grid-area: 1 / 1 / 2 / 7;
+  position: relative;
+  border-radius: $border-radius-base;
+  overflow: hidden;
+}
+
+.kv__pic-bw {
+  filter: grayscale(1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.kv__pic-bw,
+.kv__pic-color {
+  transition: all 500ms ease;
+}
+
+.kv__wrapper:hover {
+  .kv__pic-bw {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  .kv__pic-color {
+    transform: scale(1.05);
+  }
 }
 
 .kv__slogan {
   grid-area: 1 / 6 / 2 / -1;
   display: grid;
+  position: relative;
+  z-index: 2;
 }
 
 .kv__title {
   color: $color-primary-600;
   text-shadow: $text-shadow-secondary-900;
   mix-blend-mode: multiply;
-  margin-bottom: spacing(7.5);
+  margin-bottom: spacing(8);
 }
 
 .kv__accent {
-  color: $color-secondary-600;
+  color: $color-secondary-800;
 }
 
 .kv__subtitle {
   justify-self: center;
+  letter-spacing: spacing(0.25);
 }
 
-.about,
-.steps {
-  margin: 0 spacing(4) spacing(10);
-}
-
+// About
 .about {
+  padding-bottom: $section-interval; // 這邊使用 padding 而不是 margin，以接續下方區塊的漸層
+  background-image: linear-gradient(0deg, rgba($color-primary-100, 1) 10%, rgba($color-primary-100, 0) 100%);
+}
+
+.about__grid {
+  @extend %container;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: spacing(4);
+  align-items: center;
 }
 
-.about__context {
+.about__body {
   display: flex;
   flex-direction: column;
+  align-items: start;
   justify-content: space-between;
-  align-items: flex-start;
+  position: relative;
+  z-index: 2;
 }
 
+.about__deco {
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+}
+
+.about__wrapper {
+  position: relative;
+  z-index: 2;
+  border-radius: $border-radius-base;
+  overflow: hidden;
+  &:hover .about__pic {
+    transform: scale(1.05);
+  }
+}
+
+.about__pic {
+  transition: all 500ms ease;
+}
+
+.about__content {
+  width: 70%; // 讓文字集中
+  margin-bottom: spacing(8);
+}
+
+// Service
 .service {
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: spacing(9);
   align-items: center;
-  background: url("@/assets/bg-decoration-1.svg") no-repeat;
-  background-size: cover;
-  padding: 10% 0;
-  margin-bottom: spacing(8);
+  padding-bottom: spacing(5);
+  margin-bottom: $section-interval;
+  background-image: linear-gradient(180deg, rgba($color-primary-100, 1) 10%, rgba($color-primary-100, 0) 100%),
+    url("@/assets/deco-fluid.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  position: relative;
+}
+
+.service::before {
+  content: "";
+  background-image: url("@/assets/deco-fluid.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateY(-16px);
 }
 
 .service__grid {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   row-gap: spacing(3);
   justify-content: space-evenly;
 }
 
+// Steps
 .steps {
-  min-height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: $section-interval * 2;
 }
 
 .steps__grid {
+  @extend %container;
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 30%);
-  gap: spacing(3) spacing(2);
-  margin: spacing(8) 0;
+  padding: spacing(8) 0;
+  gap: spacing(8) spacing(2);
 }
 
+// News topics
 .topics {
-  display: flex;
-  justify-content: center;
-  column-gap: 10%;
   padding: 10% 0;
-  margin-bottom: spacing(8);
-  background: center / contain url("@/assets/bg-decoration-2.svg") no-repeat;
+  background-image: $gradient-overlay, url("@/assets/posture-correction.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.news,
-.info {
-  display: flex;
-  column-gap: spacing(4);
-  align-items: center;
-}
-
-.news__grid,
-.info__grid {
+.news {
+  @extend %container;
+  padding: spacing(8) 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  row-gap: spacing(3);
+  align-items: center;
+  border-radius: $border-radius-base;
+  background-color: rgba($white, 0.9);
+  box-shadow: $box-shadow-secondary-900;
+}
+
+.news__grid {
+  @extend %container;
+  max-width: 1000px;
+}
+
+.topics__link {
+  margin-top: spacing(8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

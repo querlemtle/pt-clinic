@@ -17,19 +17,20 @@ $color-primary-700: #23794a;
 $color-primary-800: #1e683f;
 $color-primary-900: #114a2b;
 
-$color-secondary-50: #e9ebf4;
-$color-secondary-100: #c8cbe5;
-$color-secondary-200: #a4aad3;
-$color-secondary-300: #8289c1;
-$color-secondary-400: #686fb4;
-$color-secondary-500: #5056a7;
-$color-secondary-600: #4a4e9d;
-$color-secondary-700: #414491;
-$color-secondary-800: #3a3a85;
-$color-secondary-900: #2d296e;
+$color-secondary-50: #e3f2f2;
+$color-secondary-100: #b9dfdd;
+$color-secondary-200: #8ecac8;
+$color-secondary-300: #66b5b1;
+$color-secondary-400: #50a59f;
+$color-secondary-500: #45958e;
+$color-secondary-600: #408881;
+$color-secondary-700: #3b7871;
+$color-secondary-800: #376861;
+$color-secondary-900: #2b4c46;
 
 // Gradients
-$gradient-primary-light: linear-gradient(180deg, $white 50%, $color-primary-50 100%);
+$gradient-header: linear-gradient(180deg, $white 50%, $color-primary-50 100%);
+$gradient-overlay: linear-gradient(to bottom, rgba($color-secondary-500, 0.7) 30%, rgba($color-primary-300, 0.3) 70%);
 
 // Fonts
 $font-sans: "Noto Sans TC", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
@@ -42,16 +43,23 @@ $font-size-l: 20px;
 $font-size-base: 16px;
 $font-size-small: 14px;
 
+// interval between sections (margin or padding)
+$section-interval: 160px;
+
 // Border radius
 $border-radius-s: 8px;
 $border-radius-base: 16px;
 $border-radius-rounded: 50%;
 
 // Shadows
-$skeuo-default: inset 0 8px 8px $color-primary-300, inset 0 -8px 8px $color-primary-900;
-$skeuo-pressed: inset 0 4px 8px $black, inset 0 -8px 8px $color-primary-400;
-$box-shadow-secondary-900: 0 4px 4px rgba(45, 41, 110, 0.25);
-$text-shadow-secondary-900: 0 4px 4px rgba(45, 41, 110, 0.25);
+$skeuo-default:
+  inset 0 8px 8px $color-primary-300,
+  inset 0 -8px 8px $color-primary-900;
+$skeuo-pressed:
+  inset 0 4px 8px $black,
+  inset 0 -8px 8px $color-primary-400;
+$box-shadow-secondary-900: 0 4px 4px rgba(43, 76, 70, 0.25);
+$text-shadow-secondary-900: 0 4px 4px rgba(43, 76, 70, 0.25);
 
 // Media queries
 $breakpoints-desktop: 1440px;
