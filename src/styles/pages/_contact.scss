@@ -1,0 +1,16 @@
+
+@use "./../abstracts" as *;
+
+// Leaflet 地圖
+.leaflet-container {
+  width: 50%;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: $border-radius-base;
+}
+
+.contact {
+  background-image: linear-gradient(to bottom, rgba($color-secondary-500, 0.7) 30%, rgba($color-primary-300, 0.3) 70%), url("@/assets/plank-exercise.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}

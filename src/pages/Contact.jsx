@@ -1,10 +1,10 @@
 import Map from "../components/Map";
 
-export default function Access() {
+export default function Contact() {
   return (
     <main className="main">
       <h2 className="title title--center">交通資訊</h2>
-      <div>
+      <div className="contact">
         <Map />
         <ul>
           <li>地址：台北市北投區光明路六段80號</li>

@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import News from "./pages/News";
-import Access from "./pages/Access";
+import Contact from "./pages/Contact";
 import Graph from "./pages/Graph";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
           <Route path="/news" element={<News />} />
-          <Route path="/access" element={<Access />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/graph" element={<Graph />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
