@@ -9,6 +9,7 @@ import lineIcon from "./line-icon.svg";
 import igIcon from "./ig-icon.svg";
 import telIcon from "./tel-icon.svg";
 import mapIcon from "./map-icon.svg";
+import logoError from "./logo-error.svg";
 
 // photos
 import medTeam from "./med-team.jpg";
@@ -36,6 +37,7 @@ export {
   decoFluid,
   logo,
   logoBorder,
+  logoError,
   fbIcon,
   lineIcon,
   igIcon,
