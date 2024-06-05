@@ -13,7 +13,7 @@ export default function StaffCard({
         <img src={pfp} alt={staffName} className="card__img" />
       </div>
       <div className="card__body">
-        <div className="card__title">
+        <div className="card__title card__title--staff">
           <h2 className="card__name">{staffName}</h2>
           <span>{staffTitle}</span>
         </div>

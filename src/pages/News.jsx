@@ -5,7 +5,7 @@ import formatDate from "@/utils/formatDate";
 export default function News() {
   return (
     <main className="main">
-      <h2 className="title">最新消息</h2>
+      <h2 className="title title--center">最新消息</h2>
       <div>
         {news.map((news) => {
           return (
