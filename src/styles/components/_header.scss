@@ -2,8 +2,7 @@
 
 .header {
   padding: spacing(2);
-  background: $gradient-primary-light;
-  height: 100%;
+  background: $gradient-header;
 }
 
 .header__list {
@@ -17,6 +16,11 @@
   row-gap: spacing(1);
   justify-items: center;
   margin-bottom: spacing(6);
+}
+
+.brand__logo {
+  width: 75px;
+  height: 75px;
 }
 
 .brand__title {
@@ -36,11 +40,11 @@
 .menu__item {
   opacity: 1;
   border-bottom: 2px solid transparent;
-}
-
-.menu__item:hover {
-  opacity: 0.7;
-  border-bottom: 2px solid $color-primary-700;
+  &:hover,
+  .active {
+    opacity: 0.7;
+    border-bottom: 2px solid $color-primary-700;
+  }
 }
 
 .header__btn {
@@ -48,11 +52,10 @@
   justify-content: center;
   align-items: center;
   transition: background-color 350ms ease;
-}
-
-.header__btn:hover,
-.header__btn:focus {
-  opacity: 0.7;
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
 }
 
 @media (max-width: 1024px) {
