@@ -1,12 +1,12 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
-import { logo } from "../assets/images";
+import { mapIcon } from "../assets/images";
 
 const [latitude, longitude] = [25.13572, 121.50646];
 
 const brandIcon = new Icon({
-  iconUrl: logo,
-  iconSize: [35, 35]
+  iconUrl: mapIcon,
+  iconSize: [50, 50]
 });
 
 export default function Map() {

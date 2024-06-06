@@ -1,6 +1,9 @@
 // -----------------------------------------------------------------------------
 // 包含整個網站都會用到的 @extend, @mixin, @function
 // -----------------------------------------------------------------------------
+
+@use "./variables" as *;
+
 // Spacing
 @function spacing($multiplier) {
   // Calculate the spacing based on the multiplier
@@ -12,3 +15,8 @@
   margin: 0 auto;
 }
 
+%section-card {
+  border-radius: $border-radius-base;
+  background-color: rgba($white, 0.9);
+  box-shadow: $box-shadow-secondary-900;
+}
