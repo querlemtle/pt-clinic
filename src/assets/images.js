@@ -1,5 +1,6 @@
 // backgrounds & decorations
 import decoFluid from "./deco-fluid.svg";
+import meshGrad1 from "./mesh-gradient-1.png";
 
 // logo & icons
 import logo from "./logo.svg";
@@ -35,6 +36,7 @@ import postureCorrection from "./posture-correction.jpg";
 
 export {
   decoFluid,
+  meshGrad1,
   logo,
   logoBorder,
   logoError,

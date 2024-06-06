@@ -6,15 +6,17 @@ export default function Team() {
     <main className="main">
       <h2 className="title title--center">團隊成員</h2>
       <section className="team">
-        {staff.map((staff, i) => {
-          return (
-            <StaffCard
-              key={i}
-              isPfpAtRight={i % 2 === 0 ? false : true}
-              {...staff}
-            />
-          );
-        })}
+        <div className="team__grid">
+          {staff.map((staff, i) => {
+            return (
+              <StaffCard
+                key={i}
+                isPfpAtRight={i % 2 === 0 ? false : true}
+                {...staff}
+              />
+            );
+          })}
+        </div>
       </section>
     </main>
   );
