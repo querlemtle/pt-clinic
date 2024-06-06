@@ -1,4 +1,4 @@
-@keyframes draw {
+@keyframes flow {
   to {
     stroke-dashoffset: -800;
   }
@@ -13,5 +13,5 @@
 
 .flow__line {
   stroke-dasharray: 200;
-  animation: draw 5s linear infinite;
+  animation: flow 5s linear infinite;
 }

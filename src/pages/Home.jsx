@@ -1,6 +1,7 @@
 import {
   flowerOnBack as bannerImg,
-  medTeam as aboutImg
+  medTeam as aboutImg,
+  logoBorder
 } from "@/assets/images";
 import IconCard from "@/components/IconCard";
 import StepCard from "@/components/StepCard";
@@ -10,7 +11,6 @@ import formatDate from "@/utils/formatDate";
 import services from "@/data/services";
 import steps from "@/data/steps";
 import news from "@/data/news";
-import { logoBorder } from "../assets/images";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import gsap from "gsap";
@@ -80,11 +80,11 @@ export default function Home() {
             return <IconCard key={item.enName} {...item} />;
           })}
         </div>
-        <a href="#" className="cta">
+        <Link to="/graph" className="cta">
           <span>
             不確定您的問題是否在治療範圍內？參考我們的互動圖表了解更多！
           </span>
-        </a>
+        </Link>
       </section>
       {/* Steps */}
       <section className="steps">
@@ -107,7 +107,8 @@ export default function Home() {
         <div className="news">
           <h2 className="title">最新消息</h2>
           <div className="news__grid">
-            {news.map((news) => {
+            {/* 僅顯示前三項 */}
+            {news.slice(0, 3).map((news) => {
               return (
                 <NewsCard
                   key={news.date}

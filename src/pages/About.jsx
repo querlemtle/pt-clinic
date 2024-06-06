@@ -28,35 +28,38 @@ export default function About() {
   return (
     <main className="main">
       <h2 className="title title--center">關於我們</h2>
+      {/* Origin */}
       <section className="origin">
         <div>
-          <h2 className="title">緣起</h2>
+          <h2 className="title">創立源由</h2>
           <p>
-            源衡物理治療所是由一群懷抱熱忱與經驗豐富的治療師成立，我們親身經歷過疼痛與疾病對個人生活的影響，以及體會到每個人在生理與日常環境上的差異，因此致力從關懷、專業、尊重的角度，為每個個案提供合適且個人化的治療服務，期望達成其需求和目標。無論是姿勢問題、慢性疼痛、運動傷害、術後復原等等，治療師們能提供專業分析，與您共同討論出最合適的治療方案，以改善疼痛、重拾健康和活力。除了解決當前問題，我們也重視疼痛預防和自我管理技巧，避免狀況再次發生，或是潛在風險擴大導致新的疾病產生。除此之外，本所亦與其他專業醫事機構合作，對有需要者進行轉介，提供更全面的醫療服務。
+            源衡物理治療所是由一群懷抱熱忱與經驗豐富的治療師成立，有感於疼痛與疾病對個人生活可能造成的影響，以及體會到每個人在生理與日常環境上的差異，因此我們致力從關懷、專業、尊重的角度，為每個個案提供合適且個人化的治療服務，期望達成其需求和目標。無論是姿勢問題、慢性疼痛、運動傷害、術後復原等等，治療師們能提供專業分析，與您共同討論出最合適的治療方案，以改善疼痛、重拾健康和活力。除了解決當前問題，我們也重視疼痛預防和自我管理技巧，避免狀況再次發生，或是潛在風險擴大導致新的疾病產生。除此之外，本所亦與其他專業醫事機構合作，對有需要者進行轉介，提供更全面的醫療服務。
           </p>
         </div>
         <div>
           <img src={teamwork} alt="團隊合作" />
         </div>
       </section>
+      {/* Ideal */}
       <section className="ideal">
         <h2 className="title">核心理念</h2>
         <div className="ideal__grid">
           <div className="circle circle--um" onPointerDown={changeDisplay}>
-            合作
+            <span className="ideal__title">合作</span>
           </div>
           <div className="circle circle--bl" onPointerDown={changeDisplay}>
-            全面
+            <span className="ideal__title">全面</span>
           </div>
           <div className="circle circle--br" onPointerDown={changeDisplay}>
-            精進
+            <span className="ideal__title">精進</span>
           </div>
           <div className="ideal__explan">
-            <h3>{idealDisplay.title}</h3>
+            <h3 className="ideal__title">{idealDisplay.title}</h3>
             <p>{idealDisplay.explan}</p>
           </div>
         </div>
       </section>
+      {/* feature */}
       <section className="feature">
         <div className="feature__grid">
           <h2 className="title title--feature">本所特色</h2>
