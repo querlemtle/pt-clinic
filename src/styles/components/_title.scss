@@ -4,8 +4,16 @@
   color: $color-secondary-700;
   font-weight: 500;
   text-shadow: $text-shadow-secondary-900;
+  margin-bottom: spacing(4);
+  position: relative;
+  z-index: 2;
 }
 
 .title {
   @extend %title;
+}
+
+.title--center {
+  margin: spacing(4) auto spacing(8);
+  text-align: center;
 }

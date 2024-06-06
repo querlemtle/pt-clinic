@@ -1,38 +1,48 @@
-import logo from "./../assets/logo.svg";
-import telIcon from "./../assets/tel-icon.svg";
+import { logo, telIcon } from "@/assets/images";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
     <header className="header">
       <div className="header__list">
         <div>
-          <a href="#" className="brand">
-            <img src={logo} alt="logo" />
+          <Link to="/" className="brand">
+            <img src={logo} alt="logo" className="brand__logo" />
             <p className="brand__title">源衡物理治療所</p>
-          </a>
+          </Link>
         </div>
-        <nav>
+        <nav className="header__nav">
           <ul className="menu">
-            <li className="menu__item">
-              <a href="#">關於我們</a>
+            <li>
+              <NavLink to="/about" className="menu__item">
+                關於我們
+              </NavLink>
             </li>
-            <li className="menu__item">
-              <a href="#">團隊成員</a>
+            <li>
+              <NavLink to="/team" className="menu__item">
+                團隊成員
+              </NavLink>
             </li>
-            <li className="menu__item">
-              <a href="#">服務項目</a>
+            <li>
+              <NavLink to="/contact" className="menu__item">
+                交通資訊
+              </NavLink>
             </li>
-            <li className="menu__item">
-              <a href="#">最新消息</a>
+            <li>
+              <NavLink to="/news" className="menu__item">
+                最新消息
+              </NavLink>
             </li>
-            <li className="menu__item">
-              <a href="#">衛教專區</a>
+            <li>
+              <NavLink to="/graph" className="menu__item">
+                知識圖表
+              </NavLink>
             </li>
           </ul>
           <div>
             <a href="#" className="header__btn">
-              <img src={telIcon} alt="聯絡我們：02-xxxx-xxxx" />
-              <p>02-xxxx-xxxx</p>
+              <img src={telIcon} alt="聯絡我們：02-1234-5678" />
+              <p>02-1234-5678</p>
             </a>
           </div>
         </nav>

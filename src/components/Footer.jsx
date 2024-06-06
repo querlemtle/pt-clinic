@@ -1,28 +1,25 @@
-import logo from "./../assets/logo.svg";
-import mapIcon from "./../assets/map-icon.svg";
-import igIcon from "./../assets/ig-icon.svg";
-import fbIcon from "./../assets/fb-icon.svg";
-import lineIcon from "./../assets/line-icon.svg";
+import { logo, mapIcon, igIcon, fbIcon, lineIcon } from "@/assets/images";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <dl>
-        <div className="row footer__brand">
-          <img src={logo} alt="logo" />
+        <div className="row brand brand--footer">
+          <img src={logo} alt="logo" className="brand__logo" />
           <p className="brand__title">源衡物理治療所</p>
         </div>
         <div className="row">
           <dt>電話 (TEL)：</dt>
-          <dd>02-xxxx-xxxx</dd>
+          <dd>02-1234-5678</dd>
         </div>
         <div className="row">
           <dt>地址：</dt>
           <dd className="row">
             台北市北投區光明路六段80號
-            <a href="#">
+            <Link to="/contact">
               <img src={mapIcon} alt="map-icon" className="list__icon" />
-            </a>
+            </Link>
           </dd>
         </div>
       </dl>

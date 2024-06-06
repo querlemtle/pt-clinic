@@ -1,0 +1,13 @@
+@use "./../abstracts" as *;
+@use "./../components" as *;
+@use "./../layout" as *;
+
+.graph {
+  width: 100%;
+}
+
+.graph__canvas {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}

@@ -1,0 +1,17 @@
+@keyframes flow {
+  to {
+    stroke-dashoffset: -800;
+  }
+}
+
+.flow {
+  width: 20%;
+  position: absolute;
+  top: 0;
+  right: 16px;
+}
+
+.flow__line {
+  stroke-dasharray: 200;
+  animation: flow 5s linear infinite;
+}

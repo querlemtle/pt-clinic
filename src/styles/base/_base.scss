@@ -21,7 +21,8 @@ h2 {
   font-size: $font-size-2xl;
 }
 
-h3 {
+h3,
+p {
   font-size: $font-size-l;
 }
 
@@ -33,7 +34,8 @@ img {
   border-radius: $border-radius-base;
 }
 
-:focus {
+// Keyboard-only focus styles, reference: https://css-tricks.com/keyboard-only-focus-styles/
+:focus-visible {
   outline: 2px solid $color-secondary-500;
   border-radius: $border-radius-s;
 }

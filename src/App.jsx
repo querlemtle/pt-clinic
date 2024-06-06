@@ -1,45 +1,34 @@
-import {
-  createHashRouter,
-  RouterProvider,
-  Outlet,
-  ScrollRestoration
-} from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import { ScrollToTop } from "./utils/ScrollToPosition";
+import ErrorPage from "./pages/ErrorPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import ErrorPage from "./pages/ErrorPage";
-
-const router = createHashRouter([
-  {
-    path: "/",
-    element: <AppLayout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <Home />
-      }
-    ]
-  }
-]);
-
-// Header and footer need to be rendered within `RouterProvider`, so <Link> can find router context
-// Reference: https://stackoverflow.com/a/77977937
-function AppLayout() {
-  return (
-    <>
-      <div className="layout">
-        <Header />
-        <Outlet />
-      </div>
-      <ScrollRestoration />
-      <Footer />
-    </>
-  );
-}
+import About from "./pages/About";
+import Team from "./pages/Team";
+import News from "./pages/News";
+import Contact from "./pages/Contact";
+import Graph from "./pages/Graph";
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <HashRouter>
+      <ScrollToTop />
+      <div className="layout">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/graph" element={<Graph />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </div>
+      <Footer />
+    </HashRouter>
+  );
 }
 
 export default App;

@@ -1,0 +1,15 @@
+@use "./../abstracts" as *;
+@use "./../components" as *;
+@use "./../layout" as *;
+
+.error__grid {
+  margin-top: spacing(4);
+  display: grid;
+  place-items: center;
+  row-gap: spacing(2);
+}
+
+.error__link {
+  font-size: $font-size-xl;
+  text-decoration: underline;
+}

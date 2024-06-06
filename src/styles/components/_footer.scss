@@ -6,9 +6,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: spacing(2) spacing(5);
+  position: relative;
+  z-index: 2;
 }
 
-.footer__brand {
+.brand--footer {
   margin-bottom: spacing(1.5);
 }
 
