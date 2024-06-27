@@ -18,5 +18,7 @@
 %section-card {
   border-radius: $border-radius-base;
   background-color: rgba($white, 0.9);
+  background-image: linear-gradient(180deg, rgba($white, 0.7), rgba($white, 0.8)), url("@/assets/pattern-bg.svg");
+  background-size: cover;
   box-shadow: $box-shadow-secondary-900;
 }

@@ -19,3 +19,7 @@
 .main {
   min-height: 100vh;
 }
+
+.main--bg {
+  background: 0% / contain url("@/assets/pattern-bg.svg");
+}

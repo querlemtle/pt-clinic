@@ -87,9 +87,8 @@
 
 .feature__grid {
   @extend %container;
+  @extend %list-section;
   width: 50%;
-  border-radius: $border-radius-base;
-  background-color: rgba($white, 0.8);
   box-shadow: $box-shadow-secondary-900;
   padding: spacing(4);
   display: grid;

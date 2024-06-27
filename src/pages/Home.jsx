@@ -7,6 +7,7 @@ import IconCard from "@/components/IconCard";
 import StepCard from "@/components/StepCard";
 import NewsCard from "@/components/NewsCard";
 import FlowSvg from "@/components/FlowSvg";
+import WaveSvg from "@/components/WaveSvg";
 import formatDate from "@/utils/formatDate";
 import services from "@/data/services";
 import steps from "@/data/steps";
@@ -85,6 +86,9 @@ export default function Home() {
             不確定您的問題是否在治療範圍內？參考我們的互動圖表了解更多！
           </span>
         </Link>
+        <div className="service__deco">
+          <WaveSvg />
+        </div>
       </section>
       {/* Steps */}
       <section className="steps">

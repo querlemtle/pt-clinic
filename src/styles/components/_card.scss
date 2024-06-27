@@ -166,21 +166,6 @@
   }
 }
 
-// Test animation
-@keyframes mesh-wave {
-  0% {
-    background-position-x: 0 0;
-  }
-
-  50% {
-    background-position: 100% 100%;
-  }
-
-  100% {
-    background-position-x: 0 0;
-  }
-}
-
 // -----------------------------------------
 // StaffCard
 .card--staff {
@@ -193,7 +178,6 @@
   background-image: url("@/assets/mesh-gradient-1.png");
   padding: spacing(4);
   box-shadow: $box-shadow-secondary-900;
-  animation: mesh-wave 20s ease-in-out infinite;
 }
 
 .card__img {
