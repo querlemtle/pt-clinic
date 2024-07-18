@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------
+// 網站的按鈕樣式
+// -----------------------------------------------------------------------------
+
+@use "./../abstracts" as *;
+
+%btn {
+  border: 2px solid $color-primary-900;
+  padding: 1rem 2rem;
+  color: $color-primary-900;
+  letter-spacing: spacing(0.25);
+  border-radius: $border-radius-base;
+  transition: all 350ms ease;
+  &:hover {
+    border: 2px solid transparent;
+    padding: 1rem 2rem;
+    background-color: $color-primary-900;
+    color: $white;
+  }
+}
+
+%skeuo {
+  padding: spacing(1) spacing(2);
+  background-color: $color-primary-700;
+  box-shadow: $skeuo-default, $box-shadow-secondary-900;
+  color: rgba($white, 0.8);
+  font-weight: 500;
+  letter-spacing: spacing(0.25);
+  text-shadow: $text-shadow-secondary-900;
+  border-radius: $border-radius-base;
+}
+
+.btn {
+  @extend %btn;
+}
+
+.cta {
+  @extend %skeuo;
+  transition: all 500ms ease;
+  position: relative;
+  z-index: 2;
+  &:hover,
+  &:active {
+    box-shadow: $skeuo-pressed;
+    text-shadow: none;
+    color: $white;
+    transform: scale(0.99);
+  }
+}
