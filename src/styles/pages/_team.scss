@@ -9,7 +9,4 @@
 
 .team__grid {
   @extend %container;
-  display: grid;
-  grid-template-rows: repeat(6, 600px);
-  row-gap: spacing(8);
 }
