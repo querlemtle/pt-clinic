@@ -1,0 +1,13 @@
+@use "./../abstracts" as *;
+
+.head,
+.shoulder,
+.arms,
+.trunk,
+.hip,
+.legs,
+.feet {
+  &:hover {
+    fill: $color-primary-400;
+  }
+}

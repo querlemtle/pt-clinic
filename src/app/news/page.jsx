@@ -8,7 +8,9 @@ export default function News() {
     <main className="main">
       <section className="news news--full">
         <FlowSvg />
-        <h2 className="title title--center">最新消息</h2>
+        <h2 className="title title--center">
+          <span className="title__deco">最新消息</span>
+        </h2>
         <div className="news__grid">
           {news.map((news) => {
             return (

@@ -21,5 +21,6 @@
 }
 
 .main--bg {
-  background: 0% / contain url("/bg/pattern-bg.svg");
+  background-image: linear-gradient(180deg, rgba($white, 0.7), rgba($white, 0.8)), url("/bg/pattern-bg.svg");
+  background-size: 100%;
 }

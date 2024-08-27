@@ -24,7 +24,9 @@ export default function Contact() {
     <main className="main">
       <section className="contact">
         {/* Map */}
-        <h2 className="title title--center">交通資訊</h2>
+        <h2 className="title title--center">
+          <span className="title__deco">交通資訊</span>
+        </h2>
         <div className="contact__grid">
           <Map zoom={18} />
           <ul className="contact__list">
@@ -32,7 +34,7 @@ export default function Contact() {
               <span className="contact__title">診所資訊</span>
               <ul className="contact__sublist">
                 {clinicInfo.map((info, i) => {
-                  return <li key={i}>{info}</li>;
+                  return <li key={i}>- {info}</li>;
                 })}
               </ul>
             </li>
@@ -40,7 +42,7 @@ export default function Contact() {
               <span className="contact__title">交通方式</span>
               <ul className="contact__sublist">
                 {transportation.map((method, i) => {
-                  return <li key={i}>{method}</li>;
+                  return <li key={i}>- {method}</li>;
                 })}
               </ul>
             </li>

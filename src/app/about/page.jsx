@@ -5,15 +5,16 @@ import Image from "next/image";
 const ideals = [
   {
     title: "合作",
-    explan: "治療師與患者之間以平等、信任的關係相互討論，一同找出問題解方"
+    explain: "治療師與患者之間以平等、信任的關係相互討論，一同找出問題解方"
   },
   {
     title: "全面",
-    explan: "透過一對一的專業評估與治療，不只對症下藥，而是全方位地分析疾病源頭"
+    explain:
+      "透過一對一的專業評估與治療，不只對症下藥，而是全方位地分析疾病源頭"
   },
   {
     title: "精進",
-    explan: "診所適時引進新儀器或吸收國內外新技術，提供患者更佳、更多元的選擇"
+    explain: "診所適時引進新儀器或吸收國內外新技術，提供患者更佳、更多元的選擇"
   }
 ];
 
@@ -28,7 +29,9 @@ export default function About() {
 
   return (
     <main className="main">
-      <h2 className="title title--center">關於我們</h2>
+      <h2 className="title title--center">
+        <span className="title__deco">關於我們</span>
+      </h2>
       {/* Origin */}
       <section className="origin">
         <div>
@@ -38,7 +41,12 @@ export default function About() {
           </p>
         </div>
         <div>
-          <Image width={1280} height={1280} src="/photos/teamwork-hands.jpg" alt="團隊合作" />
+          <Image
+            width={1280}
+            height={1280}
+            src="/photos/teamwork-hands.jpg"
+            alt="團隊合作"
+          />
         </div>
       </section>
       {/* Ideal */}
@@ -54,9 +62,9 @@ export default function About() {
           <div className="circle circle--br" onPointerDown={changeDisplay}>
             <span className="ideal__title">精進</span>
           </div>
-          <div className="ideal__explan">
+          <div className="ideal__explain">
             <h3 className="ideal__title">{idealDisplay.title}</h3>
-            <p>{idealDisplay.explan}</p>
+            <p>{idealDisplay.explain}</p>
           </div>
         </div>
       </section>
