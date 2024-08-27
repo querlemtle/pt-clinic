@@ -1,12 +1,12 @@
-import { logo, mapIcon, igIcon, fbIcon, lineIcon } from "@/assets/images";
-import { Link } from "react-router-dom";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <dl>
         <div className="row brand brand--footer">
-          <img src={logo} alt="logo" className="brand__logo" />
+          <Image width={30} height={30} src="/icons/logo.svg" alt="logo" />
           <p className="brand__title">源衡物理治療所</p>
         </div>
         <div className="row">
@@ -17,8 +17,14 @@ export default function Footer() {
           <dt>地址：</dt>
           <dd className="row">
             台北市北投區光明路六段80號
-            <Link to="/contact">
-              <img src={mapIcon} alt="map-icon" className="list__icon" />
+            <Link href="/contact">
+              <Image
+                width={48}
+                height={48}
+                src="/icons/map-icon.svg"
+                alt="map-icon"
+                className="list__icon"
+              />
             </Link>
           </dd>
         </div>
@@ -40,18 +46,38 @@ export default function Footer() {
       <div>
         <h3 className="list__title">聯絡我們</h3>
         <div className="row">
-          <a href="#">
-            <img src={igIcon} alt="Instagram" className="list__icon" />
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+            <Image
+              width={48}
+              height={48}
+              src="/icons/ig-icon.svg"
+              alt="Instagram"
+              className="list__icon"
+            />
           </a>
-          <a href="#">
-            <img src={fbIcon} alt="Facebook" className="list__icon" />
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+            <Image
+              width={48}
+              height={48}
+              src="/icons/fb-icon.svg"
+              alt="Facebook"
+              className="list__icon"
+            />
           </a>
-          <a href="#">
-            <img src={lineIcon} alt="Line" className="list__icon" />
+          <a href="https://line.me/tw/" target="_blank" rel="noreferrer">
+            <Image
+              width={48}
+              height={48}
+              src="/icons/line-icon.svg"
+              alt="Line"
+              className="list__icon"
+            />
           </a>
         </div>
       </div>
-      <small className="copyright">© 2024 源衡物理治療所 版權所有</small>
+      <small className="copyright">
+        © {new Date().getFullYear()} 源衡物理治療所 版權所有
+      </small>
     </footer>
   );
 }

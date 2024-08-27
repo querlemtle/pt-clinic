@@ -37,6 +37,8 @@
 .cta {
   @extend %skeuo;
   transition: all 500ms ease;
+  position: relative;
+  z-index: 2;
   &:hover,
   &:active {
     box-shadow: $skeuo-pressed;

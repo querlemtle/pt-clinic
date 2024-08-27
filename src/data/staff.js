@@ -1,10 +1,8 @@
-import { ptF1, ptF2, ptM1, ptM2, ptM3, ptM4 } from "@/assets/images";
-
 const staff = [
   {
     staffName: "苑博治",
     staffTitle: "院長",
-    pfp: ptM1,
+    pfp: "/photos/pt-m-1.png",
     staffResume: {
       experience: [
         "長庚大學物理治療學系學士",
@@ -24,7 +22,7 @@ const staff = [
   {
     staffName: "歐陽子熙",
     staffTitle: "物理治療師",
-    pfp: ptF1,
+    pfp: "/photos/pt-f-1.png",
     staffResume: {
       experience: ["慈濟大學物理治療學系學士", "樂宇復健科診所 物理治療師"],
       certificates: [
@@ -38,7 +36,7 @@ const staff = [
   {
     staffName: "熊碩平",
     staffTitle: "物理治療師",
-    pfp: ptM2,
+    pfp: "/photos/pt-m-2.png",
     staffResume: {
       experience: [
         "高雄醫學大學物理治療學系學士",
@@ -57,9 +55,13 @@ const staff = [
   {
     staffName: "方詩妤",
     staffTitle: "物理治療師",
-    pfp: ptF2,
+    pfp: "/photos/pt-f-2.png",
     staffResume: {
-      experience: ["長庚大學物理治療學系學士", "長庚大學物理治療學系碩士", "和太醫院 物理治療師"],
+      experience: [
+        "長庚大學物理治療學系學士",
+        "長庚大學物理治療學系碩士",
+        "和太醫院 物理治療師"
+      ],
       certificates: [
         "中華民國高考合格物理治療師",
         "Kinetic Control 動作控制課程認證",
@@ -72,7 +74,7 @@ const staff = [
   {
     staffName: "孔世銘",
     staffTitle: "物理治療師",
-    pfp: ptM3,
+    pfp: "/photos/pt-m-3.png",
     staffResume: {
       experience: ["臺灣大學物理治療學系學士", "崧德綜合醫院 物理治療師"],
       certificates: [
@@ -86,7 +88,7 @@ const staff = [
   {
     staffName: "鄭翊豪",
     staffTitle: "物理治療師",
-    pfp: ptM4,
+    pfp: "/photos/pt-m-4.png",
     staffResume: {
       experience: [
         "中國醫藥大學物理治療學系學士",

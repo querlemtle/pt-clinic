@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Image from "next/image";
 
 export default function StaffCard({
   pfp,
@@ -10,7 +11,7 @@ export default function StaffCard({
   return (
     <div className="card card--staff">
       <div className={`card__pfp ${isPfpAtRight && "card__pfp--right"}`}>
-        <img src={pfp} alt={staffName} className="card__img" />
+        <Image width={1024} height={1024} src={pfp} alt={staffName} className="card__img" />
       </div>
       <div className="card__body">
         <div className="card__title card__title--staff">

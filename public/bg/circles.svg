@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" version="1.1" viewBox="0 0 508 285.75" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="b" x="-.12406" y="-.12406" width="1.2481" height="1.2481" color-interpolation-filters="sRGB">
+<feGaussianBlur result="blur" stdDeviation="5"/>
+<feComposite in="SourceGraphic" in2="blur" operator="atop" result="composite1"/>
+<feComposite in2="composite1" operator="in" result="composite2"/>
+<feComposite in2="composite2" operator="in" result="composite3"/>
+</filter>
+<filter id="a" x="-.12431" y="-.12431" width="1.2486" height="1.2486" color-interpolation-filters="sRGB">
+<feGaussianBlur result="fbSourceGraphic" stdDeviation="5"/>
+<feGaussianBlur in="SourceGraphic" result="result1" stdDeviation="0.01"/>
+<feComposite in="fbSourceGraphic" in2="result1" k2="0.5" k3="0.5" operator="arithmetic" result="result2"/>
+<feBlend in2="fbSourceGraphic" result="result3"/>
+</filter>
+</defs>
+<rect width="508" height="285.75" opacity="0" stroke-width=".55033" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(.78429 0 0 .78429 116.06 -74.337)" cx="-65.185" cy="169.25" r="48.363" fill="#b9dfdd" filter="url(#a)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(.50846 0 0 .50846 197.83 154.41)" cx="-65.185" cy="169.25" r="48.363" fill="#b9dfdd" filter="url(#a)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(.59 0 0 .59 274.14 23.417)" cx="-65.185" cy="169.25" r="48.363" fill="#b9dfdd" filter="url(#a)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(.80375 0 0 .80375 381.14 -77.631)" cx="-65.185" cy="169.25" r="48.363" fill="#b9dfdd" filter="url(#a)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(.48658 0 0 .48658 483.57 158.11)" cx="-65.185" cy="169.25" r="48.363" fill="#b9dfdd" filter="url(#a)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(.91907 0 0 .91907 128.61 157.7)" cx="-65.185" cy="48.363" r="48.363" fill="#97c9ab" filter="url(#b)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(.46158 0 0 .46158 197.91 21.593)" cx="-65.185" cy="48.363" r="48.363" fill="#97c9ab" filter="url(#b)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(.38756 0 0 .38756 165.22 119.31)" cx="-65.185" cy="48.363" r="48.363" fill="#97c9ab" filter="url(#b)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(1.0619 0 0 1.0619 378.15 150.79)" cx="-65.185" cy="48.363" r="48.363" fill="#97c9ab" filter="url(#b)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(.71248 0 0 .71248 498.3 13.813)" cx="-65.185" cy="48.363" r="48.363" fill="#97c9ab" filter="url(#b)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+<circle transform="matrix(.42162 0 0 .42162 436.33 71.515)" cx="-65.185" cy="169.25" r="48.363" fill="#b9dfdd" filter="url(#a)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1007" style="paint-order:stroke fill markers"/>
+</svg>

@@ -13,6 +13,34 @@
   @extend %title;
 }
 
+.title__deco {
+  position: relative;
+}
+
+.title__deco::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border: 3px solid $color-secondary-100;
+  border-radius: $border-radius-rounded;
+  position: absolute;
+  right: -2.5rem;
+  top: 0;
+  z-index: -1;
+}
+
+.title__deco::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 3px solid $color-primary-50;
+  border-radius: $border-radius-rounded;
+  position: absolute;
+  right: -2rem;
+  bottom: 0;
+  z-index: -1;
+}
+
 .title--center {
   margin: spacing(4) auto spacing(8);
   text-align: center;

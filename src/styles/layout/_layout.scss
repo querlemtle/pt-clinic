@@ -19,3 +19,8 @@
 .main {
   min-height: 100vh;
 }
+
+.main--bg {
+  background-image: linear-gradient(180deg, rgba($white, 0.7), rgba($white, 0.8)), url("/bg/pattern-bg.svg");
+  background-size: 100%;
+}

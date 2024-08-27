@@ -19,6 +19,7 @@
 }
 
 .kv__wrapper {
+  height: 70%;
   grid-area: 1 / 1 / 2 / 7;
   position: relative;
   border-radius: $border-radius-base;
@@ -35,15 +36,13 @@
 
 .kv__pic-bw,
 .kv__pic-color {
+  object-fit: cover;
   transition: all 500ms ease;
 }
 
 .kv__wrapper:hover {
   .kv__pic-bw {
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-  .kv__pic-color {
-    transform: scale(1.05);
   }
 }
 
@@ -94,7 +93,7 @@
 }
 
 .about__deco {
-  height: 200%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 50%;
@@ -102,6 +101,7 @@
 }
 
 .about__wrapper {
+  height: 100%;
   position: relative;
   z-index: 2;
   border-radius: $border-radius-base;
@@ -125,26 +125,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: spacing(9);
+  row-gap: spacing(10);
   align-items: center;
-  padding-bottom: spacing(5);
-  background-image: linear-gradient(180deg, rgba($color-primary-100, 1) 10%, rgba($color-primary-100, 0) 100%), url("@/assets/deco-fluid.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
+  background-image: linear-gradient(180deg, rgba($color-primary-100, 1) 10%, rgba($color-primary-100, 0) 100%);
   position: relative;
-}
-
-.service::before {
-  content: "";
-  background-image: url("@/assets/deco-fluid.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  transform: translateY(-16px);
+  padding-bottom: spacing(10);
 }
 
 .service__grid {
@@ -155,7 +140,14 @@
   justify-content: space-evenly;
 }
 
-// -----------------------------------------
+.service__deco {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
 // Steps
 .steps {
   width: 100%;
@@ -163,7 +155,7 @@
   flex-direction: column;
   align-items: center;
   padding: $section-interval 0;
-  background-image: linear-gradient(180deg, rgba($color-secondary-100, 0.1) 50%, rgba($color-secondary-500, 0.3) 100%);
+  background-image: linear-gradient(180deg, rgba($white, 0.1), rgba($white, 0.8)) ,url("/bg/low-poly.svg");
 }
 
 .steps__grid {
@@ -179,7 +171,7 @@
 // News topics
 .topics {
   padding: 10% 0;
-  background-image: $gradient-overlay, url("@/assets/posture-correction.jpg");
+  background-image: $gradient-overlay, url("/photos/posture-correction.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -187,7 +179,7 @@
 
 .news {
   @extend %container;
-  @extend %section-card;
+  @extend %list-section;
   padding: spacing(8) 0;
   display: flex;
   flex-direction: column;

@@ -1,0 +1,23 @@
+@use "./../abstracts/" as *;
+
+@keyframes wave {
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+.wave {
+  fill: $color-primary-300;
+  animation: wave 3s linear infinite;
+}
+
+.wave--front {
+	animation-duration: 7s;
+	opacity: 0.8;
+}
+
+.wave--back {
+	animation-duration: 5s;
+	animation-direction: reverse;
+	opacity: 0.5;
+}
