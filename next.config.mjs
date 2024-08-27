@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: "./dist",
+  reactStrictMode: true,
   compiler: {
-    removeConsole: true
+    removeConsole:
+      process.env.NODE_ENV === "production" ? { exclude: ["error"] } : false
   }
 };
 
