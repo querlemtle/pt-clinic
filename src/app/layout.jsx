@@ -24,10 +24,9 @@ export default function RootLayout({ children }) {
           crossOrigin=""
         />
         <Script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></Script>
-        <Script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></Script>
         <title>源衡物理治療所</title>
       </head>
-      <body className={notoSansTC.className}>
+      <body className={notoSansTC.className} suppressHydrationWarning>
         <div className="layout">
           <Header />
           {children}

@@ -32,6 +32,7 @@
 
 .contact__list {
   @extend %list-section;
+  list-style-image: url("/icons/list-point.svg");
   flex-basis: 50%;
   font-size: $font-size-l;
   line-height: 2;

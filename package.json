@@ -16,7 +16,6 @@
     "gsap": "^3.12.5",
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
-    "leaflet-providers": "^2.0.0",
     "next": "^14.2.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
