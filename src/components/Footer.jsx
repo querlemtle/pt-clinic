@@ -17,7 +17,7 @@ export default function Footer() {
           <dt>地址：</dt>
           <dd className="row">
             台北市北投區光明路六段80號
-            <Link href="/contact">
+            <Link href="/info">
               <Image
                 width={48}
                 height={48}
