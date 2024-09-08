@@ -2,6 +2,17 @@
 @use "./../components" as *;
 @use "./../layout" as *;
 
+@keyframes ripple {
+  from {
+    opacity: 0.5;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  to {
+    opacity: 0;
+    transform: scale3d(1.5, 1.5, 1);
+  }
+}
+
 // -----------------------------------------
 // Origin
 .origin {
@@ -11,8 +22,6 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: spacing(4);
   line-height: 2;
-  background-image: url("/bg/reaching-hand.svg");
-  background-repeat: no-repeat;
 }
 
 // -----------------------------------------
@@ -62,6 +71,19 @@
   place-items: center;
   cursor: pointer;
   position: absolute;
+  transition: all 500ms ease;
+}
+
+.circle::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: $border-radius-rounded;
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  background-color: $color-secondary-100;
+  animation: ripple 3s ease infinite;
 }
 
 .circle--um {

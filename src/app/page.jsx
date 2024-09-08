@@ -10,7 +10,7 @@ import services from "@/data/services";
 import steps from "@/data/steps";
 import news from "@/data/news";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -18,15 +18,97 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Home() {
-  const [tl, setTl] = useState();
+  const gsapContainer = useRef();
+  const titleTl = useRef();
+  const titleRef = useRef();
+  const subTitleRef = useRef();
+  const bwPicRef = useRef();
+  const svcRef = useRef();
+  const stepsRef = useRef();
+  const newsRef = useRef([]);
+  const iconCardsRef = useRef([]);
+  const stepCardsRef = useRef([]);
 
-  useGSAP(() => {
-    const tl = gsap.timeline();
-    setTl(tl);
-  });
+  useGSAP(
+    () => {
+      titleTl.current = gsap
+        .timeline()
+        .fromTo(
+          titleRef.current,
+          {
+            opacity: 0,
+            y: 50
+          },
+          {
+            opacity: 1,
+            y: 0
+          }
+        )
+        .fromTo(
+          subTitleRef.current,
+          {
+            opacity: 0,
+            y: 50
+          },
+          {
+            opacity: 1,
+            y: 0
+          }
+        )
+        .fromTo(
+          bwPicRef.current,
+          {
+            clipPath: "polygon(1% 0, 100% 0, 100% 100%, 1% 100%)"
+          },
+          {
+            clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"
+          }
+        );
+
+      iconCardsRef.current.forEach((el) =>
+        gsap.fromTo(
+          el,
+          {
+            opacity: 0,
+            y: 100
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+              trigger: svcRef.current,
+              start: "top top",
+              end: "50% 50%"
+            }
+          }
+        )
+      );
+
+      stepCardsRef.current.forEach((el) =>
+        gsap.fromTo(
+          el,
+          {
+            filter: "blur(4px)",
+            x: -20,
+            opacity: 0
+          },
+          {
+            filter: "blur(0)",
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: stepsRef.current,
+              start: "20% 20%"
+            }
+          }
+        )
+      );
+    },
+    { scope: gsapContainer }
+  );
 
   return (
-    <main className="main">
+    <main className="main" ref={gsapContainer}>
       {/* Key visual */}
       <section className="kv">
         <FlowSvg />
@@ -39,6 +121,7 @@ export default function Home() {
               src="/photos/flower-on-back.jpg"
               alt="首頁宣傳圖"
               className="kv__pic-color"
+              priority={true}
             />
             <Image
               width={1920}
@@ -46,16 +129,17 @@ export default function Home() {
               src="/photos/flower-on-back.jpg"
               alt="首頁宣傳圖"
               className="kv__pic-bw"
+              ref={bwPicRef}
             />
           </div>
           {/* 標語 */}
           <div className="kv__slogan">
-            <h1 className="kv__title">
+            <h1 className="kv__title" ref={titleRef}>
               找出疼痛<span className="kv__accent">源</span>頭
               <br />
               助您恢復身心平<span className="kv__accent">衡</span>
             </h1>
-            <h3 className="kv__subtitle">
+            <h3 className="kv__subtitle" ref={subTitleRef}>
               讓我們的專業團隊協助您定位病痛原因
               <br />
               以最適合的方式改善問題、重拾活力
@@ -93,12 +177,18 @@ export default function Home() {
         </div>
       </section>
       {/* Service */}
-      <section className="service">
+      <section className="service" ref={svcRef}>
         <h2 className="title">服務項目</h2>
         {/* Card groups */}
         <div className="service__grid">
-          {services.map((item) => {
-            return <IconCard key={item.enName} {...item} />;
+          {services.map((item, i) => {
+            return (
+              <IconCard
+                ref={(el) => (iconCardsRef.current[i] = el)}
+                key={item.enName}
+                {...item}
+              />
+            );
           })}
         </div>
         <Link href="/graph" className="cta">
@@ -111,16 +201,16 @@ export default function Home() {
         </div>
       </section>
       {/* Steps */}
-      <section className="steps">
+      <section className="steps" ref={stepsRef}>
         <h2 className="title">就診流程</h2>
         <div className="steps__grid">
-          {steps.map((step) => {
+          {steps.map((step, i) => {
             return (
               <StepCard
+                ref={(el) => (stepCardsRef.current[i] = el)}
                 key={step.num}
                 num={step.num}
                 content={step.content}
-                timeline={tl}
               />
             );
           })}
@@ -128,11 +218,11 @@ export default function Home() {
       </section>
       {/* News */}
       <section className="topics">
-        <div className="news">
+        <div className="news" ref={newsRef}>
           <h2 className="title">最新消息</h2>
           <div className="news__grid">
             {/* 僅顯示前三項 */}
-            {news.slice(0, 3).map((news) => {
+            {news.slice(0, 3).map((news, i) => {
               return (
                 <NewsCard
                   key={news.date}

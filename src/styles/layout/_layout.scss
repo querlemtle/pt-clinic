@@ -18,6 +18,7 @@
 // 避免頁面內容較少時，footer 往上跑
 .main {
   min-height: 100vh;
+  position: relative;
 }
 
 .main--bg {
