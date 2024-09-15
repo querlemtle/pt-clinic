@@ -15,6 +15,13 @@
   @return $randomNum;
 }
 
+@mixin lineClamp($max-line: 1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $max-line;
+  -webkit-box-orient: vertical;
+}
+
 %container {
   width: 90%;
   margin: 0 auto;
@@ -33,4 +40,13 @@
   background-image: linear-gradient(180deg, rgba($white, 0.7), rgba($white, 0.8)), url("/bg/pattern-bg.svg");
   background-size: cover;
   box-shadow: $box-shadow-secondary-900;
+}
+
+%title {
+  color: $color-secondary-700;
+  font-weight: 500;
+  text-shadow: $text-shadow-secondary-900;
+  margin-bottom: spacing(4);
+  position: relative;
+  z-index: 2;
 }

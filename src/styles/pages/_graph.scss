@@ -11,11 +11,54 @@
 .graph__hint {
   text-align: center;
   margin-bottom: spacing(6);
-  color: $color-secondary-800;
+  color: $color-secondary-700;
 }
 
 .graph__canvas {
   display: grid;
   place-items: center;
   margin-bottom: spacing(8);
+}
+
+.graph__category {
+  @extend %title;
+  margin-top: spacing(6);
+}
+
+.graph__grid {
+  @extend %container;
+  margin-block: spacing(6);
+}
+
+.graph__link {
+  color: $color-primary-500;
+  border-bottom: 2px solid transparent;
+  &:hover {
+    border-bottom-color: $color-primary-500;
+  }
+}
+
+.graph__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: spacing(4);
+}
+
+.graph__breadcrumbs {
+  color: $color-primary-500;
+}
+
+// 文章內容頁
+.article {
+  margin-top: spacing(4);
+}
+
+.article__title {
+  @extend %title;
+  font-size: $font-size-xl;
+}
+
+.article__content {
+  width: 90%;
+  line-height: 2;
 }

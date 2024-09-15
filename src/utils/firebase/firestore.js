@@ -15,7 +15,10 @@ export async function getNews(db) {
       orderBy("publishedAt", "desc")
     );
     const newsSnapshot = await getDocs(newsColl);
-    const newsList = newsSnapshot.docs.map((doc) => doc.data());
+    const newsList = newsSnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id
+    }));
     return newsList;
   } catch (error) {
     throw new Error(error);
@@ -40,11 +43,11 @@ export async function getArticles(db, category) {
   }
 }
 
-export async function getArticleById(db, id) {
+export async function getDocById(db, col, id) {
   try {
     if (!id) return;
-    const article = await getDoc(doc(db, "graph", id));
-    return article.data();
+    const docSnapshot = await getDoc(doc(db, col, id));
+    return docSnapshot.data();
   } catch (error) {
     throw new Error(error);
   }
