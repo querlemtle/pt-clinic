@@ -7,13 +7,15 @@ import {
   where,
   doc
 } from "firebase/firestore";
+import { cache } from "react";
 
-export async function getNews(db) {
+/**
+ * getNews 取得所有新聞，依日期降冪排序
+ * @param db 資料庫實例
+ */
+export const getNews = cache(async (db) => {
   try {
-    const newsColl = query(
-      collection(db, "news"),
-      orderBy("publishedAt", "desc")
-    );
+    const newsColl = query(collection(db, "news"), orderBy("date", "desc"));
     const newsSnapshot = await getDocs(newsColl);
     const newsList = newsSnapshot.docs.map((doc) => ({
       ...doc.data(),
@@ -23,9 +25,14 @@ export async function getNews(db) {
   } catch (error) {
     throw new Error(error);
   }
-}
+});
 
-export async function getArticles(db, category) {
+/**
+ * getArticles 取得同一分類所有知識文章
+ * @param db 資料庫實例
+ * @param {string} category 分類標籤
+ */
+export const getArticles = cache(async (db, category) => {
   try {
     if (!category) return;
     const articlesColl = query(
@@ -41,9 +48,15 @@ export async function getArticles(db, category) {
   } catch (error) {
     throw new Error(error);
   }
-}
+});
 
-export async function getDocById(db, col, id) {
+/**
+ * getDocById 取得指定 id 的文件
+ * @param db 資料庫實例
+ * @param {string} col 集合名稱
+ * @param {string} id 文件的 id
+ */
+export const getDocById = cache(async (db, col, id) => {
   try {
     if (!id) return;
     const docSnapshot = await getDoc(doc(db, col, id));
@@ -51,4 +64,4 @@ export async function getDocById(db, col, id) {
   } catch (error) {
     throw new Error(error);
   }
-}
+});

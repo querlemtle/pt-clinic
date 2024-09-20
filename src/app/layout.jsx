@@ -13,7 +13,7 @@ export const metadata = {
 
 const notoSansTC = Noto_Sans_TC({ preload: false });
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, modal }) {
   return (
     <html lang="zh-Hant-TW">
       <head>
@@ -30,6 +30,8 @@ export default function RootLayout({ children }) {
         <div className="layout">
           <Header />
           {children}
+          {modal}
+          <div id="modal-root" />
         </div>
         <Footer />
       </body>

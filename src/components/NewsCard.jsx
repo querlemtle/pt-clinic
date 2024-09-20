@@ -1,13 +1,15 @@
+"use client";
 import PropTypes from "prop-types";
 import { forwardRef } from "react";
+import Link from "next/link";
 
-const NewsCard = forwardRef(function NewsCard({ date, title }, ref) {
+const NewsCard = forwardRef(function NewsCard({ date, title, id }, ref) {
   return (
     <div className="card card--news" ref={ref}>
-      <a href="#" className="card__link">
+      <Link href={`news/${id}`} className="card__link">
         <span className="card__meta">{date}</span>
         <p className="card__title card__title--news">{title}</p>
-      </a>
+      </Link>
     </div>
   );
 });
@@ -21,5 +23,6 @@ NewsCard.propTypes = {
     PropTypes.number,
     PropTypes.instanceOf(Date)
   ]).isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
 };
