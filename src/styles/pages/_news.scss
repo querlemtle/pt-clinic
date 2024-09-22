@@ -23,7 +23,7 @@
 }
 
 .news__title {
-  @include lineClamp(1);
+  @include line-clamp(1);
   font-weight: 500;
   color: $color-primary-800;
   font-size: $font-size-2xl;

@@ -10,16 +10,16 @@
   @return 8px * $multiplier;
 }
 
-@function randomNum($min, $max) {
-  $randomNum: $min + floor(random() * (($max - $min) + 1));
-  @return $randomNum;
-}
-
-@mixin lineClamp($max-line: 1) {
+@mixin line-clamp($max-line: 1) {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: $max-line;
   -webkit-box-orient: vertical;
+}
+
+@mixin icon-btn($w: 40px, $h: 35px) {
+  width: $w;
+  height: $h;
 }
 
 %container {

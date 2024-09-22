@@ -53,24 +53,30 @@
   }
 }
 
+.hamburger__toggle {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .header,
   .header__list,
   .header__nav,
   .brand {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
-  .header {
-    height: 80px;
+  .brand {
+    margin-bottom: 0;
+  }
+
+  .brand__title {
+    margin-left: spacing(1);
   }
 
   .header__list {
     width: 100%;
-  }
-
-  .brand {
-    align-items: center;
   }
 
   .header__nav {
@@ -81,5 +87,90 @@
     display: flex;
     align-items: center;
     margin-bottom: 0;
+    column-gap: spacing(3);
+  }
+
+  .header__btn {
+    margin-left: spacing(4);
+  }
+}
+
+@media (max-width: 960px) {
+  .header {
+    padding: 0;
+  }
+
+  .header__list {
+    position: relative;
+    padding-top: spacing(3);
+    top: 0;
+    z-index: 99;
+    background-color: rgba($color-primary-50, 0.5);
+  }
+
+  .header__nav,
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba($color-primary-50, 0.5);
+  }
+
+  .header__nav {
+    position: absolute;
+    top: 100%;
+    background: rgba($color-primary-50, 0.5);
+    backdrop-filter: blur(4px);
+  }
+
+  .hamburger__toggle {
+    @include icon-btn;
+    display: none;
+  }
+
+  .hamburger__wrapper {
+    @include icon-btn;
+    cursor: pointer;
+  }
+
+  .hamburger__icon {
+    @include icon-btn;
+    background-image: url("/icons/hamburger.svg");
+    background-repeat: no-repeat;
+  }
+
+  .hamburger__toggle:checked + .hamburger__wrapper > .hamburger__icon {
+    background-image: url("/icons/cross-mark.svg");
+  }
+
+  .hamburger__toggle ~ .header__nav {
+    visibility: hidden;
+    & ~ .header__nav .menu__item,
+    & ~ .header__nav .header__btn {
+      opacity: 0;
+      height: 0;
+      transition: all 0.3s ease-out;
+    }
+  }
+
+  .hamburger__toggle:checked ~ .header__nav {
+    visibility: visible;
+    & ~ .header__nav .menu__item,
+    & ~ .header__nav .header__btn {
+      opacity: 1;
+      height: 2rem;
+      transition: all 0.3s ease-out;
+    }
+  }
+
+  .menu {
+    padding-block: spacing(3);
+  }
+
+  .header__btn {
+    width: 100%;
+    margin-left: 0;
+    padding: spacing(2) 0 spacing(4) 0;
+    background-color: rgba($color-primary-50, 0.5);
   }
 }
