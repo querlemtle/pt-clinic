@@ -1,3 +1,5 @@
+@use "./../abstracts" as *;
+
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -15,6 +17,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  z-index: -1;
+  z-index: $z-bg;
   animation: slideIn 3s ease-out;
 }

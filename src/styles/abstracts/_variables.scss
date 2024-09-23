@@ -66,3 +66,8 @@ $breakpoints-desktop: 1440px;
 $breakpoints-laptop: 1024px;
 $breakpoints-tablet: 834px;
 $breakpoints-mobile: 390px;
+
+// Stacking order
+$z-bg: -1;
+$z-mid: 2;
+$z-utmost: 2000;

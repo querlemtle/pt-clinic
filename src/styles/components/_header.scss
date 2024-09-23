@@ -104,7 +104,7 @@
     position: relative;
     padding-top: spacing(3);
     top: 0;
-    z-index: 99;
+    z-index: $z-utmost;
     background-color: rgba($color-primary-50, 0.5);
   }
 

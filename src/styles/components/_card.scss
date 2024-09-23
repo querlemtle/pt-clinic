@@ -133,7 +133,7 @@
   background-color: $white;
   border-bottom: 2px solid $color-secondary-800;
   position: relative;
-  z-index: 2;
+  z-index: $z-mid;
   &:hover {
     box-shadow: $box-shadow-secondary-900;
   }
@@ -148,7 +148,7 @@
   font-weight: 500;
   color: $color-primary-800;
   position: relative;
-  z-index: 2;
+  z-index: $z-mid;
 }
 
 .card__title--news {

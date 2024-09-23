@@ -38,7 +38,7 @@
   @extend %skeuo;
   transition: all 500ms ease;
   position: relative;
-  z-index: 2;
+  z-index: $z-mid;
   &:hover,
   &:active {
     box-shadow: $skeuo-pressed;
