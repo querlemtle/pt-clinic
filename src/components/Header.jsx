@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import TelLottie from "./TelLottie";
 
 export default function Header() {
   const pathname = usePathname();
@@ -11,7 +12,7 @@ export default function Header() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  }
+  };
 
   // 換頁後關閉手機選單
   useEffect(() => {
@@ -53,15 +54,7 @@ export default function Header() {
               <Link href="/graph">知識圖表</Link>
             </li>
           </ul>
-          <a href="tel:02-12345678" className="header__btn">
-            <Image
-              width={48}
-              height={48}
-              src="/icons/tel-icon.svg"
-              alt="聯絡我們：02-1234-5678"
-            />
-            <p>02-12345678</p>
-          </a>
+          <TelLottie />
         </nav>
       </div>
     </header>

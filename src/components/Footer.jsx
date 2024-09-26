@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <dl>
         <div className="row brand brand--footer">
-          <Image width={30} height={30} src="/icons/logo.svg" alt="logo" />
+          <Image width={50} height={30} src="/icons/logo.svg" alt="logo" />
           <p className="brand__title">源衡物理治療所</p>
         </div>
         <div className="row">

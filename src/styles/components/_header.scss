@@ -35,10 +35,11 @@
 .menu__item {
   opacity: 1;
   border-bottom: 2px solid transparent;
+  transition: border-bottom 200ms ease;
   &:hover,
   &.active {
-    opacity: 0.7;
-    border-bottom: 2px solid $color-primary-700;
+    color: $color-primary-500;
+    border-bottom: 2px solid $color-primary-500;
   }
 }
 
@@ -46,10 +47,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 350ms ease;
-  &:hover,
-  &:focus {
-    opacity: 0.7;
+  &:hover {
+    color: $color-primary-500;
   }
 }
 
@@ -96,16 +95,18 @@
 }
 
 @media (max-width: 960px) {
+  $mobile-nav-bg: rgba($color-primary-50, 0.5);
+
   .header {
     padding: 0;
   }
 
   .header__list {
     position: relative;
-    padding-top: spacing(3);
+    padding-block: spacing(3);
     top: 0;
     z-index: $z-utmost;
-    background-color: rgba($color-primary-50, 0.5);
+    background-color: $mobile-nav-bg;
   }
 
   .header__nav,
@@ -113,13 +114,13 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: rgba($color-primary-50, 0.5);
+    background-color: $mobile-nav-bg;
   }
 
   .header__nav {
     position: absolute;
     top: 100%;
-    background: rgba($color-primary-50, 0.5);
+    background: $mobile-nav-bg;
     backdrop-filter: blur(4px);
   }
 
@@ -170,7 +171,7 @@
   .header__btn {
     width: 100%;
     margin-left: 0;
-    padding: spacing(2) 0 spacing(4) 0;
-    background-color: rgba($color-primary-50, 0.5);
+    padding: spacing(2) 0 spacing(4);
+    background-color: $mobile-nav-bg;
   }
 }

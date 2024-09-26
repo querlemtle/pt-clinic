@@ -3,7 +3,7 @@
 .footer {
   background-color: $color-primary-50;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: spacing(2) spacing(5);
   position: relative;
@@ -45,4 +45,34 @@
   flex: 0 0 100%;
   text-align: center;
   margin-top: spacing(1);
+}
+
+@media (max-width: 1440px) {
+  .footer {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1024px) {
+  .brand--footer {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .list__title {
+    margin-top: spacing(3);
+  }
+
+  .list__item {
+    max-width: 400px;
+  }
 }
