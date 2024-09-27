@@ -71,3 +71,11 @@ $breakpoints-mobile: 390px;
 $z-bg: -1;
 $z-mid: 2;
 $z-utmost: 2000;
+
+// Service icons map
+$icon-cards: (
+  "neuro": "neuro", 
+  "pain": "chronic-pain", 
+  "sport": "sport-injury", 
+  "pregnancy": "pregnancy"
+);

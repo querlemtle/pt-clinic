@@ -65,7 +65,7 @@ export default function Home({ news }) {
           }
         );
 
-      iconCardsRef.current.forEach((el) =>
+      iconCardsRef.current.forEach((el, i) =>
         gsap.fromTo(
           el,
           {
@@ -75,16 +75,21 @@ export default function Home({ news }) {
           {
             opacity: 1,
             y: 0,
+            stagger: function (order) {
+              order = i;
+              return order * 0.1;
+            },
             scrollTrigger: {
               trigger: svcRef.current,
               start: "top top",
-              end: "50% 50%"
-            }
+              end: "50% 50%",
+            },
+            ease: "none"
           }
         )
       );
 
-      stepCardsRef.current.forEach((el) =>
+      stepCardsRef.current.forEach((el, i) =>
         gsap.fromTo(
           el,
           {
@@ -96,6 +101,10 @@ export default function Home({ news }) {
             filter: "blur(0)",
             x: 0,
             opacity: 1,
+            stagger: function (order) {
+              order = i;
+              return order * 0.3;
+            },
             scrollTrigger: {
               trigger: stepsRef.current,
               start: "20% 20%"

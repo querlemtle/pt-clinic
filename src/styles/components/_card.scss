@@ -19,8 +19,10 @@
 // IconCard
 .card--service {
   row-gap: spacing(2);
-  width: 40%;
+  margin: 0 auto;
   max-width: 250px;
+  display: flex;
+  align-items: center;
   background-color: $white;
   padding: spacing(3);
   box-shadow: $box-shadow-secondary-900;
@@ -43,32 +45,14 @@
   background-image: url("/icons/neuro-before.svg");
 }
 
-.card:hover .card__icon--neuro {
-  background-image: url("/icons/neuro-after.svg");
-}
+@each $key, $value in $icon-cards {
+  .card__icon--#{$key} {
+    background-image: url("/icons/#{$value}-before.svg");
+  }
 
-.card__icon--pain {
-  background-image: url("/icons/chronic-pain-before.svg");
-}
-
-.card:hover .card__icon--pain {
-  background-image: url("/icons/chronic-pain-after.svg");
-}
-
-.card__icon--sport {
-  background-image: url("/icons/sport-injury-before.svg");
-}
-
-.card:hover .card__icon--sport {
-  background-image: url("/icons/sport-injury-after.svg");
-}
-
-.card__icon--pregnancy {
-  background-image: url("/icons/pregnancy-before.svg");
-}
-
-.card:hover .card__icon--pregnancy {
-  background-image: url("/icons/pregnancy-after.svg");
+  .card:hover .card__icon--#{$key} {
+    background-image: url("/icons/#{$value}-after.svg");
+  }
 }
 
 // -----------------------------------------
@@ -166,6 +150,18 @@
   &:hover,
   &:active {
     opacity: 0.7;
+  }
+}
+
+@media (max-width: 390px) {
+  .card__link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card__meta {
+    font-size: $font-size-base;
+    margin-bottom: spacing(2);
   }
 }
 

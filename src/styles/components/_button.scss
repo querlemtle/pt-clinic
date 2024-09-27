@@ -47,3 +47,9 @@
     transform: scale(0.99);
   }
 }
+
+@media (max-width: 390px) {
+  .cta {
+    max-width: 250px;
+  }
+}
