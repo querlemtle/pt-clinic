@@ -47,13 +47,13 @@
   margin-top: spacing(1);
 }
 
-@media (max-width: 1440px) {
+@media (max-width: $breakpoints-desktop) {
   .footer {
     justify-content: space-between;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $breakpoints-laptop) {
   .brand--footer {
     justify-content: start;
   }

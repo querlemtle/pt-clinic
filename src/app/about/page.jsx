@@ -56,7 +56,7 @@ export default function About() {
       </h2>
       {/* Origin */}
       <section className="origin">
-        <div>
+        <div className="origin__context">
           <h2 className="title">創立源由</h2>
           <p>
             源衡物理治療所是由一群懷抱熱忱與經驗豐富的治療師成立，有感於疼痛與疾病對個人生活可能造成的影響，以及體會到每個人在生理與日常環境上的差異，因此我們致力從關懷、專業、尊重的角度，為每個個案提供合適且個人化的治療服務，期望達成其需求和目標。無論是姿勢問題、慢性疼痛、運動傷害、術後復原等等，治療師們能提供專業分析，與您共同討論出最合適的治療方案，以改善疼痛、重拾健康和活力。除了解決當前問題，我們也重視疼痛預防和自我管理技巧，避免狀況再次發生，或是潛在風險擴大導致新的疾病產生。除此之外，本所亦與其他專業醫事機構合作，對有需要者進行轉介，提供更全面的醫療服務。
@@ -89,7 +89,7 @@ export default function About() {
           </div>
           <div className="ideal__explain">
             <h3 className="ideal__title">{ideals.title}</h3>
-            <p>{ideals.explain}</p>
+            <p className="ideal__context">{ideals.explain}</p>
           </div>
         </div>
       </section>

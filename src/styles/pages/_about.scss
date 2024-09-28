@@ -17,11 +17,18 @@
 // Origin
 .origin {
   @extend %container;
+  margin-top: spacing(8);
   margin-bottom: $section-interval;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   column-gap: spacing(4);
   line-height: 2;
+}
+
+@media (max-width: 812px) {
+  .origin__context {
+    margin-bottom: spacing(8);
+  }
 }
 
 // -----------------------------------------
@@ -32,13 +39,12 @@
   padding-bottom: $section-interval;
   background-image: url("/bg/circles.svg");
   background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .ideal__grid {
   width: 40%;
   height: 500px;
-  margin: 0 auto;
+  margin: spacing(3) auto;
   display: grid;
   place-items: center;
   position: relative;
@@ -46,19 +52,38 @@
 
 .ideal__explain {
   width: 60%;
+  max-width: 300px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: spacing(2);
   padding: spacing(6);
-  background-color: rgba($white, 0.8);
+  background-color: $color-secondary-100;
+  opacity: 0.8;
   border-radius: $border-radius-rounded;
-  border: 1px solid $white;
+  border: 2px solid $color-secondary-100;
+  position: relative;
+}
+
+.ideal__explain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: $color-secondary-50;
+  border-radius: $border-radius-rounded;
+  box-shadow: -8px 10px 16px $color-secondary-50, inset -6px 6px 10px $color-secondary-100, inset 2px 6px 10px $color-secondary-50, inset 20px -20px 22px white, inset 40px -40px 44px $color-secondary-100;
 }
 
 .ideal__title {
   font-size: $font-size-l;
+}
+
+.ideal__context {
+  color: $color-secondary-700;
 }
 
 .circle {
@@ -102,6 +127,18 @@
   right: 0;
 }
 
+@media (max-width: $breakpoints-tablet) {
+  .ideal__grid {
+    width: 80%;
+  }
+}
+
+@media (max-width: $breakpoints-mobile) {
+  .ideal__explain {
+    width: 90%;
+  }
+}
+
 // -----------------------------------------
 // Feature
 .feature {
@@ -127,5 +164,13 @@
 }
 
 .feature__content {
-  width: 50%;
+  width: 80%;
+  max-height: 500px;
+  overflow: auto;
+}
+
+@media (max-width: $breakpoints-tablet) {
+  .feature__grid {
+    width: 70%;
+  }
 }

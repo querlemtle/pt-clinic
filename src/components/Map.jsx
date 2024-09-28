@@ -32,6 +32,8 @@ export default function Map() {
       .addTo(map)
       .bindPopup("源衡物理治療所").openPopup;
       
+    map.scrollWheelZoom.disable();
+
     // 卸載地圖，避免重新整理頁面時報錯：map container is already initialized
     return () => map.remove();
   }, []);

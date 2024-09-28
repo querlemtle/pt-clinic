@@ -169,18 +169,19 @@
 // StaffCard
 .card--staff {
   max-width: 1100px;
-  margin: spacing(8) auto;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   column-gap: 5%;
   background-image: url("/bg/mesh-gradient.png");
+  background-size: cover;
   padding: spacing(4);
   box-shadow: $box-shadow-secondary-900;
 }
 
 .card__img {
   object-fit: cover;
+  max-width: 500px;
 }
 
 .card__pfp--right {
@@ -217,11 +218,36 @@
   line-height: 2;
 }
 
+@media (max-width: $breakpoints-tablet) {
+  .card--staff {
+    flex-direction: column;
+  }
+
+  .card__img {
+    max-width: 400px;
+    margin-bottom: spacing(4);
+  }
+
+  .card__pfp--right {
+    order: 0;
+  }
+
+  .card__list {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: $breakpoints-mobile) {
+  .card__img {
+    max-width: 200px;
+  }
+}
+
 // -----------------------------------------
 // ArticleCard
 .card--article {
   height: 250px;
-  width: 400px;
+  max-width: 300px;
   background-color: $color-secondary-100;
   border-radius: $border-radius-base;
   opacity: 0.7;

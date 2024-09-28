@@ -36,3 +36,10 @@
   margin: spacing(4) auto spacing(8);
   text-align: center;
 }
+
+@media (max-width: $breakpoints-laptop) {
+  .title--center {
+    margin: 0;
+    padding-block: spacing(4);
+  }
+}
