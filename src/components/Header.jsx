@@ -1,13 +1,12 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import TelLottie from "./TelLottie";
 
 export default function Header() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -17,7 +16,7 @@ export default function Header() {
   // 換頁後關閉手機選單
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <header className="header">
