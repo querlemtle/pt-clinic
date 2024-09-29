@@ -7,7 +7,6 @@
 %card {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border-radius: $border-radius-base;
   text-align: center;
 }
@@ -20,8 +19,10 @@
 // IconCard
 .card--service {
   row-gap: spacing(2);
-  width: 40%;
+  margin: 0 auto;
   max-width: 250px;
+  display: flex;
+  align-items: center;
   background-color: $white;
   padding: spacing(3);
   box-shadow: $box-shadow-secondary-900;
@@ -44,32 +45,14 @@
   background-image: url("/icons/neuro-before.svg");
 }
 
-.card:hover .card__icon--neuro {
-  background-image: url("/icons/neuro-after.svg");
-}
+@each $key, $value in $icon-cards {
+  .card__icon--#{$key} {
+    background-image: url("/icons/#{$value}-before.svg");
+  }
 
-.card__icon--pain {
-  background-image: url("/icons/chronic-pain-before.svg");
-}
-
-.card:hover .card__icon--pain {
-  background-image: url("/icons/chronic-pain-after.svg");
-}
-
-.card__icon--sport {
-  background-image: url("/icons/sport-injury-before.svg");
-}
-
-.card:hover .card__icon--sport {
-  background-image: url("/icons/sport-injury-after.svg");
-}
-
-.card__icon--pregnancy {
-  background-image: url("/icons/pregnancy-before.svg");
-}
-
-.card:hover .card__icon--pregnancy {
-  background-image: url("/icons/pregnancy-after.svg");
+  .card:hover .card__icon--#{$key} {
+    background-image: url("/icons/#{$value}-after.svg");
+  }
 }
 
 // -----------------------------------------
@@ -134,7 +117,7 @@
   background-color: $white;
   border-bottom: 2px solid $color-secondary-800;
   position: relative;
-  z-index: 2;
+  z-index: $z-mid;
   &:hover {
     box-shadow: $box-shadow-secondary-900;
   }
@@ -145,8 +128,11 @@
 }
 
 .card__title {
+  @include line-clamp(1);
   font-weight: 500;
   color: $color-primary-800;
+  position: relative;
+  z-index: $z-mid;
 }
 
 .card__title--news {
@@ -167,22 +153,35 @@
   }
 }
 
+@media (max-width: 390px) {
+  .card__link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card__meta {
+    font-size: $font-size-base;
+    margin-bottom: spacing(2);
+  }
+}
+
 // -----------------------------------------
 // StaffCard
 .card--staff {
   max-width: 1100px;
-  margin: spacing(8) auto;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   column-gap: 5%;
   background-image: url("/bg/mesh-gradient.png");
+  background-size: cover;
   padding: spacing(4);
   box-shadow: $box-shadow-secondary-900;
 }
 
 .card__img {
   object-fit: cover;
+  max-width: 500px;
 }
 
 .card__pfp--right {
@@ -217,4 +216,60 @@
   font-size: $font-size-base;
   font-weight: 400;
   line-height: 2;
+}
+
+@media (max-width: $breakpoints-tablet) {
+  .card--staff {
+    flex-direction: column;
+  }
+
+  .card__img {
+    max-width: 400px;
+    margin-bottom: spacing(4);
+  }
+
+  .card__pfp--right {
+    order: 0;
+  }
+
+  .card__list {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: $breakpoints-mobile) {
+  .card__img {
+    max-width: 200px;
+  }
+}
+
+// -----------------------------------------
+// ArticleCard
+.card--article {
+  height: 250px;
+  max-width: 300px;
+  background-color: $color-secondary-100;
+  border-radius: $border-radius-base;
+  opacity: 0.7;
+  border: 2px solid $color-secondary-100;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card--article::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: $color-secondary-100;
+  border-radius: $border-radius-base;
+  box-shadow: -8px 10px 16px $color-secondary-100, inset -6px 6px 10px $color-secondary-100, inset 2px 6px 10px $color-secondary-100, inset 20px -20px 22px white, inset 40px -40px 44px $color-secondary-50;
+}
+
+.card__title--article {
+  @include line-clamp(2);
+  font-size: $font-size-l;
+  text-align: left;
+  margin-inline: spacing(5);
 }

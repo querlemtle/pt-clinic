@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
+import { forwardRef } from "react";
 
-export default function IconCard({ zhName, enName, brief, iconName }) {
+const IconCard = forwardRef(function IconCard({ zhName, enName, brief, iconName }, ref) {
   return (
-    <div className="card card--service">
+    <div className="card card--service" ref={ref}>
       <div className={`card__icon card__icon--${iconName}`}></div>
       <div>
         <h3>{zhName}</h3>
@@ -11,7 +12,9 @@ export default function IconCard({ zhName, enName, brief, iconName }) {
       <p>{brief}</p>
     </div>
   );
-}
+});
+
+export default IconCard;
 
 IconCard.propTypes = {
   zhName: PropTypes.string.isRequired,

@@ -30,7 +30,7 @@ $color-secondary-900: #2b4c46;
 
 // Gradients
 $gradient-header: linear-gradient(180deg, $white 50%, $color-primary-50 100%);
-$gradient-overlay: linear-gradient(180deg, rgba($color-secondary-500, 0.7) 30%, rgba($color-primary-300, 0.3) 70%);
+$gradient-overlay: linear-gradient(180deg, rgba($color-secondary-500, 0.5) 30%, rgba($color-primary-300, 0.3) 70%);
 
 // Fonts
 $font-sans: "Noto Sans TC", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
@@ -66,3 +66,16 @@ $breakpoints-desktop: 1440px;
 $breakpoints-laptop: 1024px;
 $breakpoints-tablet: 834px;
 $breakpoints-mobile: 390px;
+
+// Stacking order
+$z-bg: -1;
+$z-mid: 2;
+$z-utmost: 2000;
+
+// Service icons map
+$icon-cards: (
+  "neuro": "neuro", 
+  "pain": "chronic-pain", 
+  "sport": "sport-injury", 
+  "pregnancy": "pregnancy"
+);

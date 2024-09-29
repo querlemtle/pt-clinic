@@ -1,28 +1,8 @@
-import news from "@/data/news";
-import NewsCard from "@/components/NewsCard";
-import formatDate from "@/utils/formatDate";
-import FlowSvg from "@/components/FlowSvg";
+import { db } from "@/utils/firebase/init";
+import { getNews } from "@/utils/firebase/firestore";
+import NewsList from "@/components/NewsList";
 
-export default function News() {
-  return (
-    <main className="main">
-      <section className="news news--full">
-        <FlowSvg />
-        <h2 className="title title--center">
-          <span className="title__deco">最新消息</span>
-        </h2>
-        <div className="news__grid">
-          {news.map((news) => {
-            return (
-              <NewsCard
-                key={news.date}
-                date={formatDate(news.date)}
-                title={news.title}
-              />
-            );
-          })}
-        </div>
-      </section>
-    </main>
-  );
+export default async function News() {
+  const allNews = await getNews(db);
+  return <NewsList allNews={allNews} />;
 }

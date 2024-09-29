@@ -1,0 +1,22 @@
+@use "./../abstracts" as *;
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    top: -100px;
+    left: -50%;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+    left: 0;
+  }
+}
+
+.handsvg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: $z-bg;
+  animation: slideIn 3s ease-out;
+}

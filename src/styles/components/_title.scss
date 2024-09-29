@@ -1,14 +1,5 @@
 @use "./../abstracts" as *;
 
-%title {
-  color: $color-secondary-700;
-  font-weight: 500;
-  text-shadow: $text-shadow-secondary-900;
-  margin-bottom: spacing(4);
-  position: relative;
-  z-index: 2;
-}
-
 .title {
   @extend %title;
 }
@@ -26,7 +17,7 @@
   position: absolute;
   right: -2.5rem;
   top: 0;
-  z-index: -1;
+  z-index: $z-bg;
 }
 
 .title__deco::after {
@@ -38,10 +29,17 @@
   position: absolute;
   right: -2rem;
   bottom: 0;
-  z-index: -1;
+  z-index: $z-bg;
 }
 
 .title--center {
   margin: spacing(4) auto spacing(8);
   text-align: center;
+}
+
+@media (max-width: $breakpoints-laptop) {
+  .title--center {
+    margin: 0;
+    padding-block: spacing(4);
+  }
 }

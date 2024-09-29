@@ -15,32 +15,32 @@ const transportation = [
 ];
 
 const Map = dynamic(() => import("@/components/Map"), {
-  loading: () => <p>地圖載入中...</p>,
+  loading: () => <div className="map__placeholder">地圖載入中...</div>,
   ssr: false
 });
 
 export default function Contact() {
   return (
     <main className="main">
-      <section className="contact">
+      <section className="info">
         {/* Map */}
         <h2 className="title title--center">
           <span className="title__deco">交通資訊</span>
         </h2>
-        <div className="contact__grid">
-          <Map zoom={18} />
-          <ul className="contact__list">
+        <div className="info__grid">
+          <Map />
+          <ul className="info__list">
             <li>
-              <span className="contact__title">診所資訊</span>
-              <ul className="contact__sublist">
+              <span className="info__title">診所資訊</span>
+              <ul className="info__sublist">
                 {clinicInfo.map((info, i) => {
                   return <li key={i}>- {info}</li>;
                 })}
               </ul>
             </li>
             <li>
-              <span className="contact__title">交通方式</span>
-              <ul className="contact__sublist">
+              <span className="info__title">交通方式</span>
+              <ul className="info__sublist">
                 {transportation.map((method, i) => {
                   return <li key={i}>- {method}</li>;
                 })}

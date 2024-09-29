@@ -6,5 +6,29 @@
   box-shadow: none;
   border-radius: 0;
   padding: 0 0 $section-interval 0;
-  background: 0% / cover url("/bg/pattern-bg.svg"), linear-gradient(45deg, $color-primary-50, $color-secondary-50, $color-primary-200, $color-secondary-200);
+  background: linear-gradient(45deg, $color-primary-50, $color-secondary-50, $color-primary-200, $color-secondary-200);
+}
+
+.news__meta {
+  display: block;
+  color: $color-primary-600;
+  font-size: $font-size-l;
+  margin-bottom: spacing(4);
+}
+
+.news__body {
+  background-color: $white;
+  padding: spacing(5) spacing(4);
+  border-radius: $border-radius-base;
+}
+
+.news__title {
+  font-weight: 500;
+  color: $color-primary-800;
+  font-size: $font-size-2xl;
+  margin-bottom: spacing(2);
+}
+
+.news__content {
+  line-height: 2;
 }

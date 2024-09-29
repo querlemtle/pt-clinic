@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <dl>
         <div className="row brand brand--footer">
-          <Image width={30} height={30} src="/icons/logo.svg" alt="logo" />
+          <Image width={50} height={30} src="/icons/logo.svg" alt="logo" />
           <p className="brand__title">源衡物理治療所</p>
         </div>
         <div className="row">
@@ -17,7 +17,7 @@ export default function Footer() {
           <dt>地址：</dt>
           <dd className="row">
             台北市北投區光明路六段80號
-            <Link href="/contact">
+            <Link href="/info">
               <Image
                 width={48}
                 height={48}

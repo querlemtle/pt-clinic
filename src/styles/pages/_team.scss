@@ -4,9 +4,15 @@
 
 .team {
   width: 100%;
-  margin: 0 auto $section-interval;
+  margin: 0 auto;
 }
 
 .team__grid {
   @extend %container;
+  padding-bottom: spacing(8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: spacing(8);
 }
