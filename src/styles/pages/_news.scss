@@ -7,6 +7,7 @@
   border-radius: 0;
   padding: 0 0 $section-interval 0;
   background: linear-gradient(45deg, $color-primary-50, $color-secondary-50, $color-primary-200, $color-secondary-200);
+  position: relative;
 }
 
 .news__meta {
@@ -31,4 +32,13 @@
 
 .news__content {
   line-height: 2;
+}
+
+.news__deco {
+  width: 30%;
+  transform: rotateY(180deg);
+  opacity: 0.8;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
 }
