@@ -19,17 +19,6 @@
   }
 }
 
-%skeuo {
-  padding: spacing(1) spacing(2);
-  background-color: $color-primary-700;
-  box-shadow: $skeuo-default, $box-shadow-secondary-900;
-  color: rgba($white, 0.8);
-  font-weight: 500;
-  letter-spacing: spacing(0.25);
-  text-shadow: $text-shadow-secondary-900;
-  border-radius: $border-radius-base;
-}
-
 .btn {
   @extend %btn;
 }

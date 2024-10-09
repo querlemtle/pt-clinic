@@ -1,52 +1,70 @@
 "use client";
+import { idealList, featureImgs } from "@/data/aboutClinic";
 import { useState, useRef } from "react";
 import Image from "next/image";
 import HandSvg from "@/components/HandSvg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Carousel from "@/components/Carousel";
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(useGSAP);
 
-const idealsList = [
-  {
-    title: "合作",
-    explain: "治療師與患者之間以平等、信任的關係相互討論，一同找出問題解方",
-    isActive: true
-  },
-  {
-    title: "全面",
-    explain:
-      "透過一對一的專業評估與治療，不只對症下藥，而是全方位地分析疾病源頭",
-    isActive: false
-  },
-  {
-    title: "精進",
-    explain: "診所適時引進新儀器或吸收國內外新技術，提供患者更佳、更多元的選擇",
-    isActive: false
-  }
-];
-
 export default function About() {
-  const [ideals, setIdeals] = useState(idealsList[0]);
+  const [ideals, setIdeals] = useState(idealList);
+  const [displayIdeal, setDisplayIdeal] = useState(() =>
+    idealList.find((ideal) => ideal.isActive)
+  );
   const originPicRef = useRef();
 
-  useGSAP(() => {
-    gsap.fromTo(originPicRef.current, {
-      filter: "blur(10px)",
+  const variants = {
+    hide: {
+      opacity: 0,
+      y: -20
+    },
+    invisible: {
+      scale: 0,
       opacity: 0
-    }, {
-      filter: "blur(0)",
+    },
+    enlarge: {
+      scale: 1,
+      opacity: 1
+    },
+    slideIn: {
       opacity: 1,
-      ease: "steps(10)",
-      duration: 2.5
-    })
-  })
+      y: 0,
+      transition: {
+        ease: "easeIn",
+        duration: 0.3
+      }
+    }
+  };
+
+  useGSAP(() => {
+    gsap.fromTo(
+      originPicRef.current,
+      {
+        filter: "blur(10px)",
+        opacity: 0
+      },
+      {
+        filter: "blur(0)",
+        opacity: 1,
+        ease: "steps(10)",
+        duration: 2.5
+      }
+    );
+  });
 
   const changeDisplay = (event) => {
-    const newIdealIndex = idealsList.findIndex(
-      (ideal) => ideal.title === event.target.textContent
-    );
-    setIdeals(idealsList[newIdealIndex]);
+    const newIdealList = idealList.map((ideal) => {
+      return {
+        ...ideal,
+        isActive: ideal.title === event.target.textContent ? true : false
+      };
+    });
+    setIdeals(newIdealList);
+    setDisplayIdeal(() => newIdealList.find((ideal) => ideal.isActive));
   };
 
   return (
@@ -78,28 +96,42 @@ export default function About() {
       <section className="ideal">
         <h2 className="title">核心理念</h2>
         <div className="ideal__grid">
-          <div className="circle circle--um" onPointerDown={changeDisplay}>
-            <span className="ideal__title">合作</span>
-          </div>
-          <div className="circle circle--bl" onPointerDown={changeDisplay}>
-            <span className="ideal__title">全面</span>
-          </div>
-          <div className="circle circle--br" onPointerDown={changeDisplay}>
-            <span className="ideal__title">精進</span>
-          </div>
+          {ideals.map(({ title, tag, isActive }) => (
+            <div
+              key={title}
+              className={`circle ${tag} ${isActive ? "circle--active" : ""}`}
+              onPointerDown={changeDisplay}
+            >
+              <span className="ideal__title">{title}</span>
+            </div>
+          ))}
           <div className="ideal__explain">
-            <h3 className="ideal__title">{ideals.title}</h3>
-            <p className="ideal__context">{ideals.explain}</p>
+            <motion.h3
+              key={displayIdeal.title}
+              variants={variants}
+              initial="invisible"
+              animate="enlarge"
+              className="ideal__title"
+            >
+              {displayIdeal.title}
+            </motion.h3>
+            <motion.p
+              key={displayIdeal.explain}
+              variants={variants}
+              initial="hide"
+              animate="slideIn"
+              className="ideal__context"
+            >
+              {displayIdeal.explain}
+            </motion.p>
           </div>
         </div>
       </section>
       {/* feature */}
       <section className="feature">
+        <h2 className="title title--center">本所特色</h2>
         <div className="feature__grid">
-          <h2 className="title title--feature">本所特色</h2>
-          <p className="feature__content">
-            環境上，治療所內部均為獨立私人診間，您可以在明亮、整潔、舒適的環境下安心與治療師進行一對一診療。診所配備先進紅外線治療儀、體外震波等儀器輔助治療，促進傷口癒合與減緩疼痛。我們的治療師們皆受過專業訓練與取得相關證照認可，秉持著以人為本的精神傾聽、與個案討論治療目標；另外，對於行動不便出門的患者，我們亦提供到府診察的服務，讓有需求者都能獲得適切的照護。
-          </p>
+          <Carousel imgArr={featureImgs} />
         </div>
       </section>
     </main>
