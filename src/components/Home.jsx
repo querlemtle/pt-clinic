@@ -10,7 +10,7 @@ import services from "@/data/services";
 import steps from "@/data/steps";
 import Link from "next/link";
 import PropTypes from "prop-types";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -32,6 +32,10 @@ export default function Home({ news }) {
   const newsRef = useRef([]);
   const iconCardsRef = useRef([]);
   const stepCardsRef = useRef([]);
+
+  useEffect(() => {
+    window.chtlConfig = { chatbotId: process.env.CHATLING_ID };
+  });
 
   useGSAP(
     () => {
