@@ -37,7 +37,7 @@
   border-bottom: 2px solid transparent;
   transition: border-bottom 200ms ease;
   &:hover,
-  &.active {
+  &--active {
     color: $color-primary-500;
     border-bottom: 2px solid $color-primary-500;
   }

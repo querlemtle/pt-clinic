@@ -1,0 +1,82 @@
+@use "./../abstracts" as *;
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+@media (max-width: $breakpoints-mobile) {
+  .carousel {
+    padding-bottom: spacing(8);
+  }
+}
+
+.carousel__wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__img {
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+.carousel__controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+.carousel__btn {
+  margin-left: spacing(4);
+  transition: transform 300ms ease;
+  &:hover {
+    transform: scale(0.9) translateX(-8px);
+  }
+}
+
+.carousel__btn--right {
+  margin-right: spacing(4);
+  &:hover {
+    transform: scale(0.9) translateX(8px);
+  }
+}
+
+.carousel__text {
+  width: 50%;
+  overflow: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: $z-mid;
+  font-size: $font-size-xl;
+  color: $white;
+  background-color: rgba($color-primary-900, 0.3);
+  backdrop-filter: blur(4px);
+  padding: spacing(4);
+  text-shadow: $text-shadow-secondary-900;
+  border-radius: $border-radius-base;
+}
+
+@media (max-width: $breakpoints-tablet) {
+  .carousel__text {
+    width: 70%;
+    font-size: $font-size-l;
+  }
+}
+
+@media (max-width: $breakpoints-mobile) {
+  .carousel__text {
+    top: 40%;
+    width: 50%;
+    height: 200px;
+    font-size: $font-size-base;
+  }
+}

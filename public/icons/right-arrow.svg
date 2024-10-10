@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30.067" height="50.005" fill="#30985f" version="1.1" viewBox="0 96 481.07 800.08" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="a" x="-.052632" y="-.03" width="1.1053" height="1.06" color-interpolation-filters="sRGB">
+<feGaussianBlur result="result8" stdDeviation="10"/>
+<feTurbulence baseFrequency="0.025" numOctaves="5" result="result7" seed="27" type="fractalNoise"/>
+<feComposite in="result7" in2="result8" result="result6"/>
+<feColorMatrix result="result9" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -4 "/>
+<feDisplacementMap in="result7" in2="result9" result="result4" scale="45"/>
+<feComposite in="result8" in2="result4" operator="in" result="result2"/>
+<feComposite in="result2" in2="result9" operator="in" result="fbSourceGraphic"/>
+<feComposite in="fbSourceGraphic" in2="fbSourceGraphic" k1="0.5" k2="1" operator="arithmetic" result="result91"/>
+<feBlend in="fbSourceGraphic" in2="result91" mode="luminosity"/>
+</filter>
+</defs>
+<path transform="matrix(.95451 0 0 .94349 22.908 28.068)" d="m56 896-56-57 343-343-343-343 56-57 400 400z" filter="url(#a)"/>
+</svg>

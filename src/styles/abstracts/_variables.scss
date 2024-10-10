@@ -58,8 +58,11 @@ $skeuo-default:
 $skeuo-pressed:
   inset 0 4px 8px $black,
   inset 0 -8px 8px $color-primary-400;
-$box-shadow-secondary-900: 0 4px 4px rgba(43, 76, 70, 0.25);
-$text-shadow-secondary-900: 0 4px 4px rgba(43, 76, 70, 0.25);
+$skeuo2-default:
+  inset 0 8px 8px $color-secondary-300,
+  inset 0 -8px 8px $color-secondary-900;
+$box-shadow-secondary-900: 0 4px 4px rgba($color-secondary-900, 0.25);
+$text-shadow-secondary-900: 0 4px 4px rgba($color-secondary-900, 0.25);
 
 // Media queries
 $breakpoints-desktop: 1440px;

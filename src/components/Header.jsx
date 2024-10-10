@@ -2,11 +2,36 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import useActiveNav from "@/utils/useActiveNav";
 import { useEffect, useState } from "react";
 import TelLottie from "./TelLottie";
 
+const navItems = [
+  {
+    href: "/about",
+    text: "關於我們"
+  },
+  {
+    href: "/team",
+    text: "團隊成員"
+  },
+  {
+    href: "/info",
+    text: "交通資訊"
+  },
+  {
+    href: "/news",
+    text: "最新消息"
+  },
+  {
+    href: "/graph",
+    text: "知識圖表"
+  }
+];
+
 export default function Header() {
   const pathname = usePathname();
+  const checkActiveNav = useActiveNav();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -37,21 +62,16 @@ export default function Header() {
         </label>
         <nav className="header__nav">
           <ul className="menu">
-            <li className="menu__item">
-              <Link href="/about">關於我們</Link>
-            </li>
-            <li className="menu__item">
-              <Link href="/team">團隊成員</Link>
-            </li>
-            <li className="menu__item">
-              <Link href="/info">交通資訊</Link>
-            </li>
-            <li className="menu__item">
-              <Link href="/news">最新消息</Link>
-            </li>
-            <li className="menu__item">
-              <Link href="/graph">知識圖表</Link>
-            </li>
+            {navItems.map(({ href, text }) => {
+              return (
+                <li
+                  key={href}
+                  className={`ment__item ${checkActiveNav(href) ? "menu__item--active" : ""}`}
+                >
+                  <Link href={href}>{text}</Link>
+                </li>
+              );
+            })}
           </ul>
           <TelLottie />
         </nav>

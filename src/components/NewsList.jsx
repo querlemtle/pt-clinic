@@ -2,8 +2,8 @@
 import PropTypes from "prop-types";
 import NewsCard from "@/components/NewsCard";
 import formatDate from "@/utils/formatDate";
-import FlowSvg from "@/components/FlowSvg";
 import { useRef } from "react";
+import NewsLottie from "./NewsLottie";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -35,7 +35,6 @@ export default function NewsList({ allNews }){
   return (
     <main className="main" ref={gsapContainer}>
       <section className="news news--full">
-        <FlowSvg />
         <h2 className="title title--center">
           <span className="title__deco">最新消息</span>
         </h2>
@@ -52,6 +51,7 @@ export default function NewsList({ allNews }){
             );
           })}
         </div>
+        <NewsLottie />
       </section>
     </main>
   );

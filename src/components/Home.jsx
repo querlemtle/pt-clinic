@@ -10,7 +10,7 @@ import services from "@/data/services";
 import steps from "@/data/steps";
 import Link from "next/link";
 import PropTypes from "prop-types";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -24,10 +24,18 @@ export default function Home({ news }) {
   const subTitleRef = useRef();
   const bwPicRef = useRef();
   const svcRef = useRef();
+  const svcDeco = useRef();
+  const svcTl = useRef();
   const stepsRef = useRef();
+  const stepsDeco = useRef();
+  const stepsTl = useRef();
   const newsRef = useRef([]);
   const iconCardsRef = useRef([]);
   const stepCardsRef = useRef([]);
+
+  useEffect(() => {
+    window.chtlConfig = { chatbotId: process.env.CHATLING_ID };
+  });
 
   useGSAP(
     () => {
@@ -65,8 +73,21 @@ export default function Home({ news }) {
           }
         );
 
-      iconCardsRef.current.forEach((el, i) =>
-        gsap.fromTo(
+      // Service
+      svcTl.current = gsap.timeline({ ScrollTrigger }).fromTo(
+        svcDeco.current,
+        { opacity: 1 },
+        {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: svcRef.current,
+            start: "top top",
+            end: "50% 50%"
+          }
+        }
+      );
+      iconCardsRef.current.forEach((el) =>
+        svcTl.current.fromTo(
           el,
           {
             opacity: 0,
@@ -75,20 +96,28 @@ export default function Home({ news }) {
           {
             opacity: 1,
             y: 0,
-            stagger: function (order) {
-              order = i;
-              return order * 0.1;
-            },
             scrollTrigger: {
               trigger: svcRef.current,
               start: "top top",
-              end: "50% 50%",
-            },
-            ease: "none"
+              end: "50% 50%"
+            }
           }
         )
       );
 
+      // Steps
+      stepsTl.current = gsap.timeline();
+      stepsTl.current.fromTo(
+        stepsDeco.current,
+        { opacity: 1 },
+        {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: stepsRef.current,
+            start: "20% 20%"
+          }
+        }
+      );
       stepCardsRef.current.forEach((el, i) =>
         gsap.fromTo(
           el,
@@ -188,6 +217,14 @@ export default function Home({ news }) {
       {/* Service */}
       <section className="service" ref={svcRef}>
         <h2 className="title">服務項目</h2>
+        <Image
+          width={51}
+          height={78}
+          src="/icons/logo-doc.svg"
+          alt=""
+          className="service__deco service__deco--fade"
+          ref={svcDeco}
+        />
         {/* Card groups */}
         <div className="service__grid">
           {services.map((item, i) => {
@@ -212,6 +249,14 @@ export default function Home({ news }) {
       {/* Steps */}
       <section className="steps" ref={stepsRef}>
         <h2 className="title">就診流程</h2>
+        <Image
+          width={100}
+          height={99}
+          src="/icons/logo-alert.svg"
+          alt=""
+          className="steps__deco"
+          ref={stepsDeco}
+        />
         <div className="steps__grid">
           {steps.map((step, i) => {
             return (

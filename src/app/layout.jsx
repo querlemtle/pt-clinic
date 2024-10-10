@@ -24,6 +24,13 @@ export default function RootLayout({ children, modal }) {
           crossOrigin=""
         />
         <Script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></Script>
+        <script
+          async
+          data-id={process.env.CHATLING_ID}
+          id="chatling-embed-script"
+          type="text/javascript"
+          src="https://chatling.ai/js/embed.js"
+        ></script>
         <title>源衡物理治療所</title>
       </head>
       <body className={notoSansTC.className} suppressHydrationWarning>
