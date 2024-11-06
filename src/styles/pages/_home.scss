@@ -62,7 +62,7 @@
   letter-spacing: spacing(0.25);
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoints-tablet) {
   .kv {
     margin-bottom: spacing(8);
   }
@@ -115,7 +115,7 @@
 }
 
 .about__wrapper {
-  height: 100%;
+  width: 90%;
   position: relative;
   z-index: $z-mid;
   border-radius: $border-radius-base;

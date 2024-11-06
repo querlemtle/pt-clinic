@@ -36,19 +36,19 @@ $gradient-overlay: linear-gradient(180deg, rgba($color-secondary-500, 0.5) 30%, 
 $font-sans: "Noto Sans TC", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
   "Cantarell", "Open Sans", "Helvetica Neue", "sans-serif";
 
-$font-size-3xl: 48px;
-$font-size-2xl: 32px;
-$font-size-xl: 24px;
-$font-size-l: 20px;
-$font-size-base: 16px;
-$font-size-small: 14px;
+$font-size-3xl: 3rem;
+$font-size-2xl: 2rem;
+$font-size-xl: 1.5rem;
+$font-size-l: 1.25rem;
+$font-size-base: 1rem;
+$font-size-small: 0.875rem;
 
 // interval between sections (margin or padding)
-$section-interval: 160px;
+$section-interval: 10rem;
 
 // Border radius
-$border-radius-s: 8px;
-$border-radius-base: 16px;
+$border-radius-s: 0.5rem;
+$border-radius-base: 1rem;
 $border-radius-rounded: 50%;
 
 // Shadows
