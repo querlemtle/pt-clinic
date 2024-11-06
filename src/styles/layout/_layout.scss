@@ -12,6 +12,7 @@
 @media (max-width: $breakpoints-laptop) {
   .layout {
     display: block;
+    overflow-x: hidden;
   }
 }
 

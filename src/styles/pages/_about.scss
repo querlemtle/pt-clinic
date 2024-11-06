@@ -24,9 +24,13 @@
   line-height: 2;
 }
 
-@media (max-width: 812px) {
+@media (max-width: $breakpoints-tablet) {
   .origin__context {
     margin-bottom: spacing(8);
+  }
+
+  .origin__wrapper {
+    width: 90%;
   }
 }
 
